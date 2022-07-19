@@ -1,0 +1,97 @@
+{
+	 "if": {
+	    "anyOf": [
+		 {
+			"not": {
+			  "anyOf": [
+                    {
+				    "field": "type",
+				    "like": "Microsoft.DataFactory/factories/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.DocumentDb/databaseAccounts/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.DocumentDB/databaseAccounts/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.KeyVault/vaults/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Search/searchServices/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Storage/storageAccounts/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Web/serverFarms/*"
+				    },
+                    {
+				    "field": "type",
+				    "like": "Microsoft.Web/sites/*"
+				    },
+                    {
+				    "field": "type",
+				    "in": ["Microsoft.DataFactory/factories", "Microsoft.DocumentDb/databaseAccounts", "Microsoft.DocumentDB/databaseAccounts", "Microsoft.KeyVault/vaults", "Microsoft.Search/searchServices", "Microsoft.Storage/storageAccounts", "Microsoft.Web/serverFarms", "Microsoft.Web/sites"]
+				    }
+                ]
+			}
+		 },
+          {
+		  "allof": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.KeyVault/vaults"
+			},
+			{
+            "field": "Microsoft.KeyVault/vaults/sku.name",
+            "notIn": ["Standard"]
+            }
+			]
+		  },
+            {
+			"allOf": [
+			  {
+				"source": "action",
+				"equals": "Microsoft.Storage/storageAccounts/write"
+			  },
+			  {
+				"field": "type",
+				"equals": "Microsoft.Storage/storageAccounts"
+			  },
+			  {
+				"not": 
+				  {
+					"field": "Microsoft.Storage/storageAccounts/sku.name",
+					"in": ["Standard_LRS"]
+				  }
+			   }
+			]
+		  },
+          {
+		  "allof": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Web/serverfarms"
+			},
+			{
+			  "not": {
+				"field": "Microsoft.Web/serverfarms/sku.name",
+				"in": ["Y1"]
+				}
+			  }
+			]
+		  }
+
+	  ]
+	},
+	"then": {
+	  "effect": "deny"
+	}
+}
