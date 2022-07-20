@@ -24,7 +24,7 @@ Your environment should already have the emulator pre-installed. If not, refer t
 
 1. Start the **Azure Cosmos DB Emulator** from Start Menu of window. then click on the ^ key on right side of window and then select icon of Azure Cosmos DB Emulator and click on the Open Data explorer.
 
-  ![Screenshot of Cosmo DB Emulator.](media/emulator.png)
+    ![Screenshot of Cosmo DB Emulator.](media/emulator.png)
 
 1. Wait for the emulator to automatically open your default browser and navigate to the **localhost:8081/_explorer/index.html** landing page.
 
