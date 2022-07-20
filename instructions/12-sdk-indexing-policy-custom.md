@@ -16,7 +16,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-3.  Select the folder **dp-420-cosmos-db-dev** and Click on **Select Folder**.
+3.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 ## Create a new indexing policy using the .NET SDK
 
