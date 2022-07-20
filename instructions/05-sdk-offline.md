@@ -1,8 +1,4 @@
----
-lab:
-    title: 'Configure the Azure Cosmos DB SQL API SDK for offline development'
-    module: 'Module 3 - Connect to Azure Cosmos DB SQL API with the SDK'
----
+## Lab 2 :  Configure the Azure Cosmos DB SQL API SDK for offline development
 
 # Configure the Azure Cosmos DB SQL API SDK for offline development
 
@@ -14,25 +10,21 @@ In this lab, you'll connect to the Azure Cosmos DB Emulator from the Azure SDK f
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start **Visual Studio Code**.((the program icon is pinned to the Desktop).)
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    > Note If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
-
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
+  
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 ## Start the Azure Cosmos DB Emulator
 
 Your environment should already have the emulator pre-installed. If not, refer to the [installation instructions][docs.microsoft.com/azure/cosmos-db/local-emulator] to install the Azure Cosmos DB Emulator. Once the emulator has started, you can retrieve the connection string and use it to connect to the emulator using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Start the **Azure Cosmos DB Emulator**.
+1. Start the **Azure Cosmos DB Emulator** from Start Menu of window. then click on the ^ key on right side of window and then select icon of Azure Cosmos DB Emulator and click on the Open Data explorer.
 
-    > &#128221; You may be prompted to grant administrator access to start the emulator. In the lab environment, the **Admin** account has the same password as the **Student** account.
-
-    > &#128161; The Azure Cosmos DB Emulator is pinned to both the Windows taskbar and Start Menu. ***If the Emulator does not start from the pinned icons, try opening it by double-clicking on the*** **C:\Program Files\Azure Cosmos DB Emulator\CosmosDB.Emulator.exe** ***file***. Note that the emulator takes 20-30 seconds to start.
+  ![Screenshot of Cosmo DB Emulator.](media/emulator.png)
 
 1. Wait for the emulator to automatically open your default browser and navigate to the **localhost:8081/_explorer/index.html** landing page.
 
@@ -62,9 +54,9 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
     string connectionString = "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
     ```
 
-    > &#128221; The URI for the emulator is typically ***localhost:[port]*** using SSL with the default port set to **8081**.
+    > Note: The URI for the emulator is typically ***localhost:[port]*** using SSL with the default port set to **8081**.
 
-    > &#128221; *C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==* is the default key for all installations of the emulator. This key can be changed using command line options.
+    > Note: *C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==* is the default key for all installations of the emulator. This key can be changed using command line options.
 
 1. Asynchronously invoke the [CreateDatabaseIfNotExistsAsync][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient.createdatabaseifnotexistsasync] method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create within the emulator and storing the result in a variable of type [Database][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database]:
 
