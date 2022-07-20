@@ -12,9 +12,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
-
-     ![Visual Studio Code Icon](./images/vscode.jpg)
+1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
 2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
