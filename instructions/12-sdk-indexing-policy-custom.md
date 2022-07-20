@@ -1,16 +1,10 @@
----
-lab:
-    title: 'Configure an Azure Cosmos DB SQL API container''s index policy with the portal'
-    module: 'Module 6 - Define and implement an indexing strategy for Azure Cosmos DB SQL API'
----
-
-# Configure an Azure Cosmos DB SQL API container's index policy using the SDK
+# Lab 2 :  Configure an Azure Cosmos DB SQL API container's index policy with the portal
 
 Indexing policies can be managed from any of the Azure Cosmos DB SDKs. The .NET SDK specifically includes a set of classes that can be used to architect and push a new indexing policy to a container in Azure Cosmos DB SQL API.
 
 In this lab, you'll create a custom indexing policy for a container using the .NET SDK
 
-## Prepare your development environment
+### Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -18,44 +12,13 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1.  Start Visual Studio Code (the program icon is pinned to the bottom taskbar).
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+     ![Visual Studio Code Icon](./images/vscode.jpg)
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-## Create an Azure Cosmos DB SQL API account
-
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
-
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
-
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
-    | **Location** | *Choose any available region* |
-    | **Capacity mode** | *Provisioned throughput* |
-    | **Apply Free Tier Discount** | *Do Not Apply* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
-
-1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
-
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
-
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
-
-1. Close your web browser window or tab.
+3.  Select the folder **dp-420-cosmos-db-dev** and Click on **Select Folder**.
 
 ## Create a new indexing policy using the .NET SDK
 
@@ -65,7 +28,7 @@ The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.
 
 1. Open the **script.cs** code file.
 
-1. Update the existing variable named **endpoint** with its value set to the **endpoint** of the Azure Cosmos DB account you created earlier.
+1. Update the existing variable named **endpoint** with its value set to the **endpoint** of the Azure Cosmos DB account you created in previous lab.
   
     ```
     string endpoint = "<cosmos-endpoint>";
@@ -73,7 +36,7 @@ The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.
 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
-1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
+1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created in previous lab.
 
     ```
     string key = "<cosmos-key>";
@@ -222,21 +185,3 @@ Just like with any other indexing policy, you can use the Data Explorer to view 
     > &#128221; This is the JSON representation of the indexing policy you created using the .NET SDK in this lab.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container.id
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties.indexingpolicy]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.containerproperties.indexingpolicy
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.database.createcontainerifnotexistsasync
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.excludedpath]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.excludedpath
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.excludedpath.path]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.excludedpath.path
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.includedpath]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.includedpath
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.includedpath.path]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.includedpath.path
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingmode#fields]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingmode#fields
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.excludedpaths]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.excludedpaths
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.includedpaths]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.includedpaths
-[docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.indexingmode]: https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy.indexingmode
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks/
