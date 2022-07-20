@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Connect to Azure Cosmos DB SQL API with the SDK'
-    module: 'Module 3 - Connect to Azure Cosmos DB SQL API with the SDK'
----
+# Lab 1 :  Connect to Azure Cosmos DB SQL API with the SDK
 
-# Connect to Azure Cosmos DB SQL API with the SDK
+## Connect to Azure Cosmos DB SQL API with the SDK
 
 The Azure SDK for .NET is a suite of libraries that provides a consistent developer interface to interact with many Azure services. The Azure SDK for .NET is built to the .NET Standard 2.0 specification ensuring that it can be used in .NET Framework (4.6.1 or above), .NET Core (2.1 or above), and .NET (5 or above) applications.
 
@@ -18,11 +14,12 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+1. Open a file, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
+
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,14 +34,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing * |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+1. Click on **Review+ Create** and after validation click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
