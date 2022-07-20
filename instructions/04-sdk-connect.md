@@ -12,7 +12,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Start **Visual Studio Code**.
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    > Note: If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
 1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
@@ -30,16 +30,17 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
 1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
-
+  
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing * |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
+   
 
 1. Click on **Review+ Create** and after validation click on **Create**.
 
@@ -67,7 +68,7 @@ The NuGet website contains a searchable index of packages that are available to 
 
 1. Select the **.NET CLI** tab to observe the command required to import the latest version of this library into a .NET project.
 
-    > &#128161; No need to record this command. You will use a specific version of the library later in this exercise.
+    > Note: No need to record this command. You will use a specific version of the library later in this exercise.
 
 1. Close your web browser window or tab.
 
@@ -79,7 +80,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
 
 1. Open the context menu for the **04-sdk-connect** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
+    > Note: This command will open the terminal with the starting directory already set to the **04-sdk-connect** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -116,7 +117,7 @@ Once the Azure Cosmos DB library from the Azure SDK for .NET has been imported, 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Add a **string** variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -124,7 +125,7 @@ Once the Azure Cosmos DB library from the Azure SDK for .NET has been imported, 
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Add a new variable named **client** of type [CosmosClient][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclient] using the **endpoint** and **key** variables in the constructor:
   
