@@ -1,7 +1,5 @@
 # Lab 1 :  Review the default index policy for an Azure Cosmos DB SQL API container with the portal
 
-## Review the default index policy for an Azure Cosmos DB SQL API container with the portal
-
 Every container in Azure Cosmos DB has an indexing policy that directs the service on how to index items within the container. By default, this indexing policy indexes every property of every item. The default indexing policy makes it easy to get started with Azure Cosmos DB quickly as you don't have to think about indexing, performance, and management at the start of a project.
 
 In this lab, you'll observe and manipulate the default index policy for a few containers using the Data Explorer.
@@ -67,7 +65,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     cosmicworks --endpoint <cosmos-endpoint> --key <cosmos-key> --datasets product
     ```
 
-    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
+    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
@@ -127,7 +125,7 @@ When a container is created by code, portal, or a tool; the indexing policy is s
     }
     ```
 
-    > Note: This default policy will index all possible paths with the exception of **_etag**.
+    > &#128221; This default policy will index all possible paths with the exception of **_etag**.
 
 1. Within the editor, replace the content of the indexing policy to only index the **/price** path:
 
@@ -168,7 +166,7 @@ When a container is created by code, portal, or a tool; the indexing policy is s
 
 1. Still in the **Query** tab, observe the value of the **Request Charge** field within the **Query Statistics** section.
 
-    > Note: Now that the **name** property is not indexed, the request charge has increased.
+    > &#128221; Now that the **name** property is not indexed, the request charge has increased.
 
 1. Delete the contents of the editor area.
 
