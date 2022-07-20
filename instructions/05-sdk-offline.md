@@ -88,7 +88,7 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
 
 1. In **Visual Studio Code**, open the context menu for the **05-sdk-offline** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **05-sdk-offline** folder.
+    >Note: This command will open the terminal with the starting directory already set to the **05-sdk-offline** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -181,7 +181,7 @@ It is important to stop the emulator when you are done using it as it can use sy
 
 1. Navigate to the emulator icon in the Windows system tray, open the context menu, and then select **Exit** to shut down the emulator.
 
-    > &#128221; It may take a minute for all instances of the emulator to exit.
+    > Note: It may take a minute for all instances of the emulator to exit.
 
 [code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
 [docs.microsoft.com/azure/cosmos-db/local-emulator]: https://docs.microsoft.com/azure/cosmos-db/local-emulator
