@@ -80,7 +80,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
- > Note: If you face any error, close the previous open Visual Studio Code and reopen it and try to run the previous command again.
+ > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
