@@ -1,10 +1,4 @@
----
-lab:
-    title: 'Process Azure Cosmos DB SQL API data using Azure Functions'
-    module: 'Module 7 - Integrate Azure Cosmos DB SQL API with Azure services'
----
-
-# Process Azure Cosmos DB SQL API data using Azure Functions
+# Lab 2: Process Azure Cosmos DB SQL API data using Azure Functions
 
 The Azure Cosmos DB trigger for Azure Functions is implemented using a change feed processor. You can create functions that respond to create and update operations in your Azure Cosmos DB SQL API container with this knowledge. If you have implemented a change feed processor manually, the setup for Azure Functions is similar.
 
@@ -18,21 +12,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
-    | **Location** | *Choose any available region* |
-    | **Capacity mode** | *Serverless* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+1. Go to the created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
@@ -40,29 +20,10 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
-1. Select **Data Explorer** from the resource menu.
+1. Select **Data Explorer** from the menu.
+   > Note: Delete the **productslease**, which is already created in previous lab( click on **...** and select delete container).
 
 1. In the **Data Explorer** pane, expand **New Container** and then select **New Database**.
-
-1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
-
-    | **Setting** | **Value** |
-    | --: | :-- |
-    | **Database id** | *cosmicworks* |
-
-1. Back in the **Data Explorer** pane, observe the **cosmicworks** database node within the hierarchy.
-
-1. In the **Data Explorer** pane, select **New Container**.
-
-1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
-
-    | **Setting** | **Value** |
-    | --: | :-- |
-    | **Database id** | *Use existing* &vert; *cosmicworks* |
-    | **Container id** | *products* |
-    | **Partition key** | */categoryId* |
-
-1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **products** container node within the hierarchy.
 
 1. In the **Data Explorer** pane, select **New Container** again.
 
@@ -87,7 +48,7 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Name** | *Enter a globally unique name* |
     | **Publish** | *Code* |
     | **Runtime stack** | *.NET* |
@@ -95,7 +56,9 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Region** | *Choose any available region* |
     | **Storage account** | *Create a new storage account* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    > &#128221; **To create new storage account** select **Hosting** tab click on **create new** and enter name as **storage[DID]**.
+
+1. Select **Review+create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -116,9 +79,47 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Collection name for leases** | *productslease* |
     | **Create lease collection if it does not exist** | *No* |
 
+## Create an Log Analytics workspaces.
+Before you can begin writing code, you will need to create the Log Analytics workspaces using the creation wizard.
+
+1. Select **+ Create a resource**, search for *Log Analytics worksapces*, and then create a new **Log Analytics worksapces** account resource with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing resource group* |
+    | **Name** | *Enter a globally unique name* |
+    | **Region** | *Choose same region* |
+    
+1. Select **Review+create**.
+
+1. Wait for the deployment task to complete before continuing with this task.
+    
+## Create an Application Insights.
+you will need to create the Application Insights using the creation wizard.
+
+1. Select **+ Create a resource**, search for *Application Insights*, and then create a new **Application Insights** account resource with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *Select an existing resource group* |
+    | **Name** | *Enter a globally unique name* |
+    | **Region** | *Choose same region* |
+    | **Resource Mode** | *workspace-based* |
+    | **Log Analytics worksapces** | *Select an existing* |
+    
+1. Select **Review+create**.
+
+1. Wait for the deployment task to complete before continuing with this task.
+
 ## Implement function code in .NET
 
 The function you created earlier is a C# script that is edited in-portal. You will now use the portal to write a short function to output the unique identifier of any item inserted or updated in the container.
+
+1. Select **Function App** from resource group.
+
+1. In the **Functions** pane, select functions then click on **ItemsListener**.
 
 1. In the **ItemsListener** &vert; **Function** pane, navigate to the **Code + Test** pane.
 
@@ -248,8 +249,3 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 1. Observe the log output from your function. The terminal outputs a **Detected Operation** message for each change that was sent to it using the change feed. The operations are batched into groups of ~100 operations.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/api/microsoft.azure.documents]: https://docs.microsoft.com/dotnet/api/microsoft.azure.documents
-[docs.microsoft.com/dotnet/api/microsoft.azure.documents.document]: https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.document
-[docs.microsoft.com/dotnet/api/microsoft.azure.documents.resource.id]: https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.resource.id
