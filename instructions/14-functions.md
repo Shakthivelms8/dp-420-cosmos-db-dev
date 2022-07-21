@@ -121,6 +121,14 @@ The function you created earlier is a C# script that is edited in-portal. You wi
 
 1. In the **Functions** pane, select functions then click on **ItemsListener**.
 
+1. In the **ItemsListener** &vert; **Function** pane, navigate to the **Monitor** pane.
+
+1. In Configure Application Insights to capture invocation logs, click on **Configure** the select **turn on Application Insights**.
+
+1. Under the change your resource, **select existing resource** and select the application insight which you have created previously.
+
+1. Select **Apply** and click **Yes**.
+
 1. In the **ItemsListener** &vert; **Function** pane, navigate to the **Code + Test** pane.
 
 1. In the editor for the **run.csx** script, delete the contents of the editor area.
@@ -244,7 +252,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 1. Close **Visual Studio Code**.
 
-1. Return to the currently open browser window or tab with the Azure Functions log section expanded.
+1. Return to the currently open browser window or tab with the Azure Functions and select **Monitor** then select **log** section expanded.
 
 1. Observe the log output from your function. The terminal outputs a **Detected Operation** message for each change that was sent to it using the change feed. The operations are batched into groups of ~100 operations.
 
