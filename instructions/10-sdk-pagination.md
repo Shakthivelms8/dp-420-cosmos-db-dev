@@ -61,7 +61,7 @@ When processing query results, you must make sure your code progresses through a
 
 1. Back in the **Explorer** pane of **Visual Studio Code**, open the **script.cs** code file.
 
-1. Update the existing variable named **endpoint** with its value set to the **endpoint** of the Azure Cosmos DB account you created earlier.
+1. Update the existing variable named **endpoint** with its value set to the **endpoint** of the Azure Cosmos DB account  you created in previous lab..
   
     ```
     string endpoint = "<cosmos-endpoint>";
@@ -69,7 +69,7 @@ When processing query results, you must make sure your code progresses through a
 
     >Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
-1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account you created earlier.
+1. Update the existing variable named **key** with its value set to the **key** of the Azure Cosmos DB account  you created in previous lab.
 
     ```
     string key = "<cosmos-key>";
