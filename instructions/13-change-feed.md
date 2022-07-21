@@ -1,10 +1,5 @@
----
-lab:
-    title: 'Process change feed events using the Azure Cosmos DB SQL API SDK'
-    module: 'Module 7 - Integrate Azure Cosmos DB SQL API with Azure services'
----
 
-# Process change feed events using the Azure Cosmos DB SQL API SDK
+# Lab 1: Process change feed events using the Azure Cosmos DB SQL API SDK
 
 The Azure Cosmos DB SQL API change feed is the key to creating supplemental applications driven by events from the platform. The .NET SDK for the Azure Cosmos DB SQL API ships with a suite of classes to build your applications that integrate with the change feed and listen for notifications about operations within your containers.
 
@@ -18,11 +13,11 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+3.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,7 +32,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
@@ -295,6 +290,8 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
+    
+    > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
