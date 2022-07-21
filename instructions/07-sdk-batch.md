@@ -17,7 +17,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
-## configure the SDK project
+## Use an Azure Cosmos DB SQL API account and configure the SDK project
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **07-sdk-batch** folder.
 
