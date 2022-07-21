@@ -1,10 +1,4 @@
----
-lab:
-    title: 'Create and update documents with the Azure Cosmos DB SQL API SDK'
-    module: 'Module 4 - Implement Azure Cosmos DB SQL API point operations'
----
-
-# Create and update documents with the Azure Cosmos DB SQL API SDK
+## Lab 1 :  Create and update documents with the Azure Cosmos DB SQL API SDK
 
 The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.
 
@@ -14,15 +8,13 @@ In this lab, you’ll use the SDK to perform everyday CRUD operations on an item
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1.  Start **Visual Studio Code** (the program icon is pinned to the Desktop).
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    > Note: If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1. Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,13 +29,12 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -65,7 +56,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the context menu for the **06-sdk-crud** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
+    > Note: This command will open the terminal with the starting directory already set to the **06-sdk-crud** folder.
 
 1. Add the [Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1] package from NuGet using the following command:
 
@@ -83,7 +74,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the **script.cs** code file within the **06-sdk-crud** folder.
 
-    > &#128221; The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    > Note: The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
@@ -91,7 +82,7 @@ Using the credentials from the newly created account, you will connect with the 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > Note: For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -99,7 +90,7 @@ Using the credentials from the newly created account, you will connect with the 
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > Note: For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. Asynchronously invoke the CreateDatabaseIfNotExistsAsync method of the **client** variable passing in the name of the new database (**cosmicworks**) you would like to create, and storing the result in a variable of type **Database**:
 
@@ -159,7 +150,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 
 1. Return to **Visual Studio Code**. Open the **product.cs** code file within the **06-sdk-crud** folder.
 
-    > &#128221; Do not close the editor for the **script.cs** file.
+    > Note: Do not close the editor for the **script.cs** file.
 
 1. Observe the **Product** class within this code file. This class represents a product item that will be stored and manipulated within this container.
 
@@ -353,7 +344,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Name** | *Road Saddle* |
     | **Price** | *$45.99* |
 
-    > &#128221; At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
+    > Note: At this point in time, these values should not have been changed since you have created the item. You will change these values in this exercise.
 
 1. Close your web browser window or tab.
 
@@ -440,7 +431,7 @@ While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK a
     | **Name** | *Road LL Saddle* |
     | **Price** | *$32.55* |
 
-    > &#128221; At this point in time, these values should  have been changed since you have observed the item.
+    > Note: At this point in time, these values should  have been changed since you have observed the item.
 
 1. Close your web browser window or tab.
 
