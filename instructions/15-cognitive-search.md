@@ -1,62 +1,8 @@
----
-lab:
-    title: 'Search data using Azure Cognitive Search and Azure Cosmos DB SQL API'
-    module: 'Module 7 - Integrate Azure Cosmos DB SQL API with Azure services'
----
-
-# Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
+# Lab 3: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
 
 Azure Cognitive Search combines a search engine as a service with deep integration with AI capabilities to enrich the information in the search index.
 
 In this lab, you will build an Azure Cognitive Search index that automatically indexes data in an Azure Cosmos DB SQL API container and enriches the data using the Azure Cognitive Services Translator functionality.
-
-## Create an Azure Cosmos DB SQL API account
-
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
-
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
-
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
-    | **Location** | *Choose any available region* |
-    | **Capacity mode** | *Serverless* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
-
-1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
-
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
-
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
-
-    1. Record the value of the **PRIMARY CONNECTION STRING** field. You will use this **connection string** value later in this exercise.
-
-1. Select **Data Explorer** from the resource menu.
-
-1. In the **Data Explorer** pane, select **New Container**.
-
-1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
-
-    | **Setting** | **Value** |
-    | --: | :-- |
-    | **Database id** | *Create new* &vert; *cosmicworks* |
-    | **Container id** | *products* |
-    | **Partition key** | */categoryId* |
-
-1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **products** container node within the hierarchy.
-
-1. Close your web browser window or tab.
 
 ## Seed your Azure Cosmos DB SQL API account with sample data
 
@@ -255,5 +201,3 @@ Now that your materialized view of the Azure Cosmos DB SQL API data is in the se
 1. Observe that this search query returns a collection of facet data that indicates how many items belong to each category even if they are not all present in the current page of results. In this example, the matching items are broken down into numeric price categories in intervals of 500. This is typically used to populate filters and navigation aids in client-side applications.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
