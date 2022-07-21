@@ -1,16 +1,12 @@
----
-lab:
-    title: 'Create a stored procedure with the Azure portal'
-    module: 'Module 13 - Create server-side programming constructs in Azure Cosmos DB SQL API'
----
+# Module 13: Create server-side programming constructs in Azure Cosmos DB SQL API
 
-# Create a stored procedure with the Azure portal
+## Lab 1: Create a stored procedure with the Azure portal
 
 Stored procedures are one of the ways you can execute business logic server-side in Azure Cosmos DB. With a stored procedure, you can perform basic CRUD (Create, Read, Update, Delete) operations with a container on multiple documents within a single transactional scope.
 
 In this lab, you'll author a stored procedure that creates a document within your container. You will then use a SQL query to validate the results of the stored procedure.
 
-## Author a stored procedure
+### Task 1: Author a stored procedure
 
 Stored procedures are authored in language-integrated JavaScript and support execution of basic CRUD operations inside of the database engine. JavaScript running within the database engine is made possible using the server-side JavaScript SDK for Azure Cosmos DB and a series of helper methods.
 
@@ -124,7 +120,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Observe the empty result. While the stored procedure executed successfully, the JavaScript code never returned a human-readable response.
 
-## Implement best practices for a stored procedure
+### Task 2: Implement best practices for a stored procedure
 
 While the stored procedure authored earlier in this lab has basic functionality, it is also missing some common error-handling techniques that should be implemented in all stored procedures. First, the stored procedure assumes that it will always have time to complete the operation and doesn't check the return value of the **createDocument** method to ensure it has enough time. Second, the stored procedure assumes that all documents are successfully inserted without checking or throwing any potential error messages. Finally, the stored procedure doesn't return the newly created document as the HTTP response for the request that originally invoked the stored procedure. You will make these three changes to the stored procedure to implement common best practices.
 
@@ -214,7 +210,7 @@ While the stored procedure authored earlier in this lab has basic functionality,
 
 1. Observe the JSON result. After the stored procedure executed successfully, the newly created document was returned as a response for the original HTTP request.
 
-## Query documents
+### Task 3: Query documents
 
 To wrap up things, you will use the Data Explorer to issue a SQL query that will return the two documents created in this lab.
 
