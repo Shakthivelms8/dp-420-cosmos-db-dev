@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Optimize an Azure Cosmos DB SQL API container indexing policy for write operations'
-    module: 'Module 10 - Optimize query performance in Azure Cosmos DB SQL API'
----
+# Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
-# Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
+## Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 For write-heavy workloads or workloads with large JSON objects, it can be advantageous to optimize the indexing policy to only index properties that you know you will want to use in your queries.
 
@@ -14,15 +10,13 @@ In this lab, we will use a test .NET application to insert a large JSON item int
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    > **Note:** If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles.**
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on Select Folder.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,12 +31,10 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -78,7 +70,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Open the context menu for the **23-index-optimization** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **23-index-optimization** folder.
+    > **Note:** This command will open the terminal with the starting directory already set to the **23-index-optimization** folder.
 
 1. Build the project using the [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build] command:
 
@@ -86,7 +78,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
     dotnet build
     ```
 
-    > &#128221; You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
+    > **Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
 
 1. Close the integrated terminal.
 
@@ -98,7 +90,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > **Note:** For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -106,7 +98,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > **Note:** For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
@@ -128,7 +120,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
 1. Leave the integrated terminal open.
 
-    > &#128221; You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
+    > **Note:** You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
 
 ## Update the indexing policy and rerun the .NET application
 
@@ -200,7 +192,7 @@ This lab scenario will assume that our future queries focus primarily on the nam
     dotnet run
     ```
 
-    > &#128221; If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
+    > **Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -232,7 +224,7 @@ This lab scenario will assume that our future queries focus primarily on the nam
     dotnet run
     ```
 
-    > &#128221; If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
+    > **Note:** If you are not seeing an updated RU charge, you may need to wait a couple of minutes.
 
 1. Close **Visual Studio Code**.
 

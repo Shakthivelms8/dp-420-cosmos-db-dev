@@ -1,14 +1,10 @@
----
-lab:
-    title: 'Measure performance of entities in separate and embeded containers'
-    module: 'Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API'
----
+# Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
-# Measure performance of entities in separate and embeded containers
+## Lab 1: Measure performance of entities in separate and embeded containers
 
 In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -16,11 +12,11 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+1.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **16-measure-performance** folder.
 
@@ -48,7 +44,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 In Database-v1, data is stored in individual containers. In that database, run queries to get the customer, customer address, and customer password. Review the request charge for each of those queries.
 
-### Query for customer entity
+### Task 2: Query for customer entity
 
 In Database-v1, run a query to get the customer entity and review the request charge.
 
@@ -72,7 +68,7 @@ In Database-v1, run a query to get the customer entity and review the request ch
 
     ![Screenshot that shows the query stats for customer query in the database.](media/17-customer-query-v1.png)
 
-### Query for customer address
+### Task 3: Query for customer address
 
 Run a query to get the customer address entity and review the request charge.
 
@@ -88,7 +84,7 @@ Run a query to get the customer address entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer address query in the database.](media/17-customer-address-query-v1.png)
 
-### Query for customer password
+### Task 4: Query for customer password
 
 Run a query to get the customer password entity and review the request charge.
 
@@ -104,7 +100,7 @@ Run a query to get the customer password entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer password query in the database.](media/17-customer-password-query-v1.png)
 
-### Add up the request charges
+### Task 5: Add up the request charges
 
 Now that we've run all of our queries, let's add up all of the Request Unit costs for them.
 
@@ -115,7 +111,7 @@ Now that we've run all of our queries, let's add up all of the Request Unit cost
 |Customer Password|2.83|
 |**Total RU/s**|**8.49**|
 
-## Measure performance of embedded entities
+### Task 6: Measure performance of embedded entities
 
 Now we're going to query for the same information but with the entities embedded in a single document.
 
@@ -139,4 +135,3 @@ When you compare the RU/s for each query that you ran, you see that the last que
 
 When you're searching for a single item and know the partition key and ID of the data, you can retrieve this data via a *point-read* by calling `ReadItemAsync()` in the Azure Cosmos DB SDK. A point-read is even faster than our query. For the same customer data, the cost is just 1 RU/s, which is a nearly threefold improvement.
 
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
