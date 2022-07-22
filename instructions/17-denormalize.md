@@ -1,54 +1,14 @@
----
-lab:
-    title: 'Cost of denormalizing data and aggregates and using the change feed for referential integrity'
-    module: 'Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API'
----
+# Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
-# Cost of denormalizing data and aggregates and using the change feed for referential integrity
+## Lab 2: Cost of denormalizing data and aggregates and using the change feed for referential integrity
 
 Using the Relational model could allow us to place different entities in their own containers.  However in NoSQL databases there are no *joins* between containers so we need to start denormalizing our data to eliminate the use of *joins*. Additionally, NoSQL reduces the number of request by modeling the data so the applications can fetch their data in as fewer requests as possible. One problem that rises when denormalizing our data could be the referential integrity between our entities, for this we can use the change feed to keep the data in sync. Denormalizing your aggregates like group by counts can also help us reduce requests.  
 
 In this lab, you'll look at the benefits of how denormalizing data and aggregates can help us reduce cost and how we can use the change feed to mantain referential integrity on the denormalized data.
 
-## Prepare your development environment
-
-If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
-
-1. Start **Visual Studio Code**.
-
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
-
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
-
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
-
-1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **17-denormalize** folder.
-
-1. Open the context menu for the **17-denormalize** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
-
-1. If the terminal opens as a **Windows Powershell** terminal, open a new **Git Bash** terminal.
-
-    > &#128161; To open a **Git Bash** terminal, on the right hand side of the the terminal menu,click on the pulldown besides the **+** sign and choose *Git Bash*.
-
-1. In the **Git Bash terminal**, run the following commands. The commands open a browser window to connect to the azure portal where you will use the provided lab credentials, run a script that creates a new Azure Cosmos DB account, and then build and start the app you use to populate the database and complete the exercises. *Once the script ask you for the provided credential for the azure account, the build can take 15-20 minutes to finish, so it might be a good time to get some coffee or tea*.
-
-    ```
-    az login
-    cd 17-denormalize
-    bash init.sh
-    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
-    dotnet build
-    dotnet run --load-data
-
-    ```
-
-1. Close the integrated terminal.
-
 ## Exercise 1: Measure performance cost when denormalizing data
 
-### Query for the product category name
+### Task 1: Query for the product category name
 
 In the **database-v2** container, where data is stored in individual containers, run a query to get the product category name, and then view the request charge for that query.
 
@@ -76,7 +36,7 @@ In the **database-v2** container, where data is stored in individual containers,
 
     ![Screenshot of the query stats for the query you ran in Data Explorer.](media/16-product-category-stats.png)
 
-### Query for the products in the category
+### Task 2: Query for the products in the category
 
 Next, query the product container to get all the products in the "Components, Headsets" category.
 
@@ -94,7 +54,7 @@ Next, query the product container to get all the products in the "Components, He
 
     ![Screenshot of Azure Cosmos DB Data Explorer that shows the results of the query to the product container.](media/16-product-results.png)
 
-### Query for each product's tags
+### Task 3: Query for each product's tags
 
 Next, query the productTag container three times, once for each of the three products: HL Headset, LL Headset, and ML Headset.
 
@@ -217,7 +177,7 @@ To go to the code that you'll update for change feed, do the following:
 
 1. If it is not opened already, open Visual Studio Code, and open the *Program.cs* file in the *17-denormalize* folder.
 
-### Complete the code for change feed
+### Task 1: Complete the code for change feed
 
 Add code to handle the changes that are passed into the delegate, loop through each product for that category, and update them.
 
@@ -303,7 +263,7 @@ Add code to handle the changes that are passed into the delegate, loop through e
 
     ![Screenshot that shows the main menu for the application with multiple options for working with the data.](media/16-main-menu.png)
 
-### Run the change feed sample
+### Task 2: Run the change feed sample
 
 Now that you've completed the code for change feed, let's see it in action.
 
@@ -351,7 +311,7 @@ To get to the code that you'll use in this unit, do the following:
 
 1. If it is not opened already, open Visual Studio Code, and open the *Program.cs* file in the *17-denormalize* folder.
 
-## Complete the code to update total sales orders
+### Task 1: Complete the code to update total sales orders
 
 1. Go to the function that creates a new sales order.
 
@@ -376,7 +336,7 @@ To get to the code that you'll use in this unit, do the following:
 
     ![Screenshot of the create new order and update customer total function with the line of code to increment sales order count by one.](media/16-create-order-sales-order-count.png)
 
-## Complete the code to implement transactional batch
+### Task 2: Complete the code to implement transactional batch
 
 1. Scroll down a few lines to see the data for the new sales order you'll create for your customer.
 
@@ -426,7 +386,7 @@ To get to the code that you'll use in this unit, do the following:
 
     ![Screenshot that shows the main menu for the application with multiple options for working with the data.](media/16-main-menu.png)
 
-## Query for the customer and their sales orders
+### Task 3: Query for the customer and their sales orders
 
 Because you designed your database to store both the customer and all their sales orders in the same container by using **customerId** as your partition key, you can query the customer container and return the customer's record and all of the customer's sales orders in a single operation.
 
@@ -442,7 +402,7 @@ Because you designed your database to store both the customer and all their sale
 
     ![Screenshot of Cloud Shell, showing the output of the query customer and orders query with a customer record and two sales orders.](media/16-query-customer-and-orders-initial.png)
 
-## Create a new sales order and update total sales orders in a transaction
+### Task 4: Create a new sales order and update total sales orders in a transaction
 
 Create a new sales order for the same customer, and update the total sales orders saved in their customer record.
 
@@ -461,7 +421,7 @@ Create a new sales order for the same customer, and update the total sales order
 
     ![Screenshot of Cloud Shell, with an updated customer record showing a value of 3 for the sales order count and three sales orders below it.](media/16-query-customer-and-orders-next.png)
 
-## Delete an order by using transactional batch
+### Task 4: Delete an order by using transactional batch
 
 As with any e-commerce application, customers also cancel orders. You can do the same here as well.
 
@@ -476,7 +436,7 @@ As with any e-commerce application, customers also cancel orders. You can do the
 
 1. Press any key to return to the main menu.
 
-## View the code that deletes a sales order
+### Task 5: View the code that deletes a sales order
 
 You delete a sales order in exactly the same way that you create one. Both operations are wrapped in a transaction and executed in the same logical partition. Let's look at the code that does that.
 
@@ -491,7 +451,7 @@ You delete a sales order in exactly the same way that you create one. Both opera
 
     Next is the call to **CreateTransactionalBatch()**. Again, the logical partition key value is passed in, but this time, **DeleteItem()** is called with the order ID and **ReplaceItem()** is called with the updated customer record.
 
-## View the code for your top 10 customers query
+### Task 6: View the code for your top 10 customers query
 
 Let's look at the query for your top 10 customers.
 
@@ -522,5 +482,3 @@ Let's look at the query for your top 10 customers.
     Something you might not realize is that the top 10 customers query is a cross-partition query that fans out across all the partitions in your container.
 
     The companion lab to this one pointed out that you should strive to avoid cross-partition queries. However, in reality, such queries can be OK in situations where the container is still small or the query is run infrequently. If the query is run frequently or the container is exceptionally large, it would be worth exploring the cost of materializing this data into another container and using it to serve this query.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
