@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Optimize an Azure Cosmos DB SQL API container indexing policy for a query'
-    module: 'Module 10 - Optimize query performance in Azure Cosmos DB SQL API'
----
+# Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
-# Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
+## Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
 
 When planning for an Azure Cosmos DB SQL API account, knowing our most popular queries can help us tune the indexing policy so that queries are as performant as possible.
 
