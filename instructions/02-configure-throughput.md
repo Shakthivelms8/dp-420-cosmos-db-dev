@@ -1,16 +1,12 @@
----
-lab:
-    title: 'Configure throughput for Azure Cosmos DB SQL API with the Azure portal'
-    module: 'Module 2 - Plan and implement Azure Cosmos DB SQL API'
----
+# Module 2 - Plan and implement Azure Cosmos DB SQL API
 
-# Configure throughput for Azure Cosmos DB SQL API with the Azure portal
+## Lab 1: Configure throughput for Azure Cosmos DB SQL API with the Azure portal
 
 One of the most important things to wrap your head around is configuring throughput in Azure Cosmos DB SQL API. To create an Azure Cosmos DB SQL API container, you must first create an account and then a database; in that order.
 
 In this lab, you will provision throughput using various methods in the Data Explorer. You will provision throughput either manually or using autoscale, at the database and the container level.
 
-## Create a serverless account
+### Task 1: Create a serverless account
 
 Let’s start simple by creating a serverless account. There’s not much to configure here since everything is serverless. When we create our database and container, we don’t have to provision throughput at all. You will see all of that as we step into creating this account.
 
@@ -30,10 +26,10 @@ Let’s start simple by creating a serverless account. There’s not much to con
 
     | **Setting** | **Value** |
     | --: | :-- |
-    | **Subscription** | *All resources must belong to a resource group. Every resource group must belong to a subscription. Here, use your existing Azure subscription.* |
-    | **Resource Group** | *All resources must belong to a resource group. Here, select an existing or create a new resource group.* |
-    | **Account Name** | *The globally unique account name. This name will be used as part of the DNS address for requests. Enter any globally unique name. The portal will check the name in real time.* |
-    | **Location** | *Select the geographical region from which your database will initially be hosted. Choose any available region.* |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource Group** | *Select an existing resource group.* |
+    | **Account Name** | *Enter a globally unique name* |
+    | **Location** | *Choose any available region* |
     | **Capacity mode** | *Select Serverless* |
 
 1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
@@ -70,7 +66,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 
 1. Return to the **Home** of the Azure portal.
 
-## Create a provisioned account
+### Task 2: Create a provisioned account
 
 Now, we are going to create a provisioned throughput account with more traditional configuration options. This type of account will open up a world of configuration options for us which can be a bit overwhelming. We are going to walk through a few examples of database and container pairings that are possible here.
 
@@ -86,10 +82,10 @@ Now, we are going to create a provisioned throughput account with more tradition
 
     | **Setting** | **Value** |
     | --: | :-- |
-    | **Subscription** | *All resources must belong to a resource group. Every resource group must belong to a subscription. Here, use your existing Azure subscription.* |
-    | **Resource Group** | *All resources must belong to a resource group. Here, select an existing or create a new resource group.* |
-    | **Account Name** | *The globally unique account name. This name will be used as part of the DNS address for requests. Enter any globally unique name. The portal will check the name in real time.* |
-    | **Location** | *Select the geographical region from which your database will initially be hosted. Choose any available region.* |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource Group** | *Select an existing resource group.* |
+    | **Account Name** | *Enter a globally unique name* |
+    | **Location** | *Choose any available region* |
     | **Capacity mode** | *Select provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
