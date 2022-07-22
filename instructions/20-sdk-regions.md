@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Connect to different regions with the Azure Cosmos DB SQL API SDK'
-    module: 'Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API'
----
+# Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
-# Connect to different regions with the Azure Cosmos DB SQL API SDK
+## Connect to different regions with the Azure Cosmos DB SQL API SDK
 
 When you enable geo-redundancy for an Azure Cosmos DB SQL API account, you can then use the SDK to read data from regions in any order you configure. This technique is beneficial when you distribute your read requests across all of your available read regions.
 
@@ -14,15 +10,13 @@ In this lab, you will configure the CosmosClient class to connect to read region
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    > **Note:** If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles.**
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on Select Folder.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,13 +31,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    > **Note:** Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -53,11 +47,11 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Wait for the replication task to complete before continuing with this task.
 
-    > &#128221; This operation can take approximately 5-10 minutes.
+    > **Note:** This operation can take approximately 5-10 minutes.
 
 1. Record the names of the **Write** (primary) region and the two **Read** regions. You will use these region names later in this exercise.
 
-    > &#128221; For example, if your primary region is **North Europe**, and your two read secondary regions are **East US 2**, and **South Africa North**; you will record all three of those names as-is.
+    > **Note:** For example, if your primary region is **North Europe**, and your two read secondary regions are **East US 2**, and **South Africa North**; you will record all three of those names as-is.
 
 1. In the resource blade, navigate to the **Data Explorer** pane.
 
@@ -112,7 +106,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the context menu for the **20-sdk-regions** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **20-sdk-regions** folder.
+    > **Note:** This command will open the terminal with the starting directory already set to the **20-sdk-regions** folder.
 
 1. Build the project using the [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build] command:
 
@@ -120,13 +114,13 @@ Using the credentials from the newly created account, you will connect with the 
     dotnet build
     ```
 
-    > &#128221; You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
+    > **Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
 
 1. Close the integrated terminal.
 
 1. Open the **script.cs** code file within the **20-sdk-regions** folder.
 
-    > &#128221; The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    > **Note:** The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
@@ -134,7 +128,7 @@ Using the credentials from the newly created account, you will connect with the 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > **Note:** For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -142,7 +136,7 @@ Using the credentials from the newly created account, you will connect with the 
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > **Note:** For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
@@ -161,7 +155,7 @@ The **CosmosClientOptions** class includes a property to configure the list of r
     };
     ```
 
-    > &#128161; Alternatively; you can use the [Microsoft.Azure.Cosmos.Regions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.regions] static class which includes built-in string properties for various Azure regions.
+    > **Note:** Alternatively; you can use the [Microsoft.Azure.Cosmos.Regions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.regions] static class which includes built-in string properties for various Azure regions.
 
 1. Create a new instance of the **CosmosClientOptions** named **options** class with the [ApplicationPreferredRegions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosclientoptions.applicationpreferredregions] property set to the **regions** variable:
 
@@ -249,7 +243,7 @@ The **CosmosClientOptions** class includes a property to configure the list of r
 
 1. Review the JSON diagnostic data. Search for a property named **HttpResponseStats** and a child property named **RequestUri**. The value of this property should be a URI that includes the name and region you configured earlier in this lab.
 
-    > &#128221; For example, if your account name is: **dp420** and the first region you configured is **East Asia**; then the value of the JSON property would be: **dp420-eastasia.documents.azure.com/dbs/cosmicworks/colls/products**.
+    > **Note:** For example, if your account name is: **dp420** and the first region you configured is **East Asia**; then the value of the JSON property would be: **dp420-eastasia.documents.azure.com/dbs/cosmicworks/colls/products**.
 
 1. Close the integrated terminal.
 
