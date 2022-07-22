@@ -1,10 +1,12 @@
-# Lab 1 :  Review the default index policy for an Azure Cosmos DB SQL API container with the portal
+# Module 6 - Define and implement an indexing strategy for Azure Cosmos DB SQL API
+
+## Lab 1 :  Review the default index policy for an Azure Cosmos DB SQL API container with the portal
 
 Every container in Azure Cosmos DB has an indexing policy that directs the service on how to index items within the container. By default, this indexing policy indexes every property of every item. The default indexing policy makes it easy to get started with Azure Cosmos DB quickly as you don't have to think about indexing, performance, and management at the start of a project.
 
 In this lab, you'll observe and manipulate the default index policy for a few containers using the Data Explorer.
 
-### Create an Azure Cosmos DB SQL API account
+### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -35,7 +37,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Seed the Azure Cosmos DB SQL API account with data
+### Task 2: Seed the Azure Cosmos DB SQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
@@ -68,13 +70,15 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/** and your key is: **fDR2ci9QgkdkvERTQ==**, then the command would be:
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
+    > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
+
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
 
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
 
-## View and manipulate the default indexing policy
+### Task 3: View and manipulate the default indexing policy
 
 When a container is created by code, portal, or a tool; the indexing policy is set to an intelligent default if you do not specify it otherwise. You will observe that default indexing policy and make a change to the policy.
 
