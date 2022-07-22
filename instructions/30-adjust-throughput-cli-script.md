@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Adjust provisioned throughput using an Azure CLI script'
-    module: 'Module 12 - Manage an Azure Cosmos DB SQL API solution using DevOps practices'
----
+# Module 12 - Manage an Azure Cosmos DB SQL API solution using DevOps practices
 
-# Adjust provisioned throughput using an Azure CLI script
+## Adjust provisioned throughput using an Azure CLI script
 
 The Azure CLI is a set of commands that you can use to manage various resources across Azure. Azure Cosmos DB has a rich command group that can be used to manage various facets of an Azure Cosmos DB account regardless of the selected API.
 
@@ -48,19 +44,6 @@ Before using the Azure CLI, you must first check the version of the CLI and logi
     
     This command could return multiple Resource Group names.
 
-1. (Optional) ***If no Resource Group was created for you***, choose a Resource Group name and create it. *Be aware that some lab envrionments might be locked down and you will need an administrator to create the Resource Group for you.*
-
-    i. Get the your location name closet to you from this list
-
-    ```
-    az account list-locations --query "sort_by([].{YOURLOCATION:name, DisplayName:regionalDisplayName}, &YOURLOCATION)" --output table
-    ```
-
-    ii. Create the resource group.  *Be aware that some lab envrionments might be locked down and you will need an administrator to create the Resource Group for you.*
-    ```
-    az group create --name YOURRESOURCEGROUPNAME --location YOURLOCATION
-    ```
-
 ## Create Azure Cosmos DB account using the Azure CLI
 
 The **cosmosdb** command group contains basic commands to create and manage Azure Cosmos DB accounts using the CLI. Since an Azure Cosmos DB account has an addressable URI, it's important to create a globally unique name for your new account, even if you create it via script.
@@ -79,7 +62,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $suffix=Get-Random -Maximum 1000000
     ```
 
-    > &#128221; The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
+    > **Note** The Get-Random cmdlet generates a random integer between 0 and 1,000,000. This is useful because our services requires a globally unique name.
 
 1. Create another new variable name **accountName** using the hard-coded string **csms** and variable substitution to inject the value of the **$suffix** variable using the following command:
 
@@ -93,7 +76,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $resourceGroup="<resource-group-name>"
     ```
 
-    > &#128221; For example, if your resource group is named **dp420**, the command will be **$resourceGroup="dp420"**.
+    > **Note** For example, if your resource group is named **dp420-xxxxx**, the command will be **$resourceGroup="dp420-xxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$accountName** and **$resourceGroup** variables to the terminal output using the following command:
 
@@ -116,7 +99,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
 
 1. Wait for the **create** command to finish execution and return before proceeding forward with this lab.
 
-    > &#128161; The **create** command can take anywhere from two to twelve minutes to complete, on average.
+    > **Note** The **create** command can take anywhere from two to twelve minutes to complete, on average.
 
 ## Create Azure Cosmos DB SQL API resources using the Azure CLI
 
