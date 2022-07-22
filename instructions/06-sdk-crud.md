@@ -1,10 +1,12 @@
+# Module 4 - Implement Azure Cosmos DB SQL API point operations
+
 ## Lab 1 :  Create and update documents with the Azure Cosmos DB SQL API SDK
 
 The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.
 
 In this lab, you’ll use the SDK to perform everyday CRUD operations on an item within an Azure Cosmos DB SQL API container.
 
-## Prepare your development environment
+### Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -16,7 +18,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -48,7 +50,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Connect to the Azure Cosmos DB SQL API account from the SDK
+### Task 2: Connect to the Azure Cosmos DB SQL API account from the SDK
 
 Using the credentials from the newly created account, you will connect with the SDK classes and create a new database and container instance. Then, you will use the Data Explorer to validate that the instances exist in the Azure portal.
 
@@ -144,7 +146,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Close your web browser window or tab.
 
-## Perform create and read point operations on items with the SDK
+### Task 3: Perform create and read point operations on items with the SDK
 
 You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.Container class to perform common operations on items within a SQL API container. These operations are all done using the task asynchronous programming model in C#.
 
@@ -323,7 +325,7 @@ You will now use the set of asynchronous methods in the Microsoft.Azure.Cosmos.C
 
 1. Close the integrated terminal.
 
-## Perform update and delete point operations with the SDK
+### Task 4: Perform update and delete point operations with the SDK
 
 While learning the SDK, it's not uncommon to use an online Azure Cosmos DB SDK account or the emulator to update an item and  oscillate back-and-forth between the Data Explorer and your IDE of choice as you perform an operation and check to see if your change has been applied. Here, you will do just that as you update and delete an item using the SDK.
 
