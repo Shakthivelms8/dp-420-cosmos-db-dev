@@ -1,10 +1,12 @@
-# Lab 2 :  Configure an Azure Cosmos DB SQL API container's index policy with the portal
+# Module 6 - Define and implement an indexing strategy for Azure Cosmos DB SQL API
+
+## Lab 2 :  Configure an Azure Cosmos DB SQL API container's index policy with the portal
 
 Indexing policies can be managed from any of the Azure Cosmos DB SDKs. The .NET SDK specifically includes a set of classes that can be used to architect and push a new indexing policy to a container in Azure Cosmos DB SQL API.
 
 In this lab, you'll create a custom indexing policy for a container using the .NET SDK
 
-### Prepare your development environment
+### Task 1: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -18,7 +20,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 3.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
-## Create a new indexing policy using the .NET SDK
+### Task 1: Create a new indexing policy using the .NET SDK
 
 The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.Cosmos.IndexingPolicy][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy] class to build new indexing policies in code.
 
@@ -144,7 +146,7 @@ The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.
 
 1. Close **Visual Studio Code**.
 
-## Observe an indexing policy created by the .NET SDK using the Data Explorer
+### Task 2: Observe an indexing policy created by the .NET SDK using the Data Explorer
 
 Just like with any other indexing policy, you can use the Data Explorer to view policies that you pushed using the .NET SDKs. You will now use the portal to review the policy you created in this lab from code.
 

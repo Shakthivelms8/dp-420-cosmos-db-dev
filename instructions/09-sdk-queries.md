@@ -16,7 +16,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > Note: If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open a File, From the top-left options, Click on File->Open Folder and navigate to C:\AllFiles.
+1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to C:\AllFiles.
 
 1. Select the folder dp-420-cosmos-db-dev-stage and Click on Select Folder.
 
