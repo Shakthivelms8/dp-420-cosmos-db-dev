@@ -1,3 +1,5 @@
+# Module 4 - Implement Azure Cosmos DB SQL API point operations
+
 ## Lab 2 :  Batch multiple point operations together with the Azure Cosmos DB SQL API SDK
 
 The [TransactionalBatch][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatch] and [TransactionalBatchResponse][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.transactionalbatchresponse] classes together are the key to composing and decomposing operations into a single logical step. Using these classes, you can write your code to perform multiple operations and then determine if they were completed successfully server-side.
@@ -17,7 +19,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
-## Use an Azure Cosmos DB SQL API account and configure the SDK project
+### Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **07-sdk-batch** folder.
 
@@ -61,7 +63,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Close the integrated terminal.
 
-## Creating a transactional batch
+### Task 2: Creating a transactional batch
 
 First, let’s create a simple transactional batch that makes two fictional products. This batch will insert a worn saddle and a rusty handlebar into the container with the same “used accessories” category identifier. Both items have the same logical partition key, ensuring that we will have a successful batch operation.
 
@@ -147,7 +149,7 @@ First, let’s create a simple transactional batch that makes two fictional prod
 
 1. Close the integrated terminal.
 
-## Creating an errant transactional batch
+### Task 3: Creating an errant transactional batch
 
 Now, let’s create a transactional batch that will error purposefully. This batch will attempt to insert two items that have different logical partition keys. We will create a flickering strobe light in the “used accessories” category and a new helmet in the “pristine accessories” category. By definition, this should be a bad request and return an error when performing this transaction.
 
