@@ -1,10 +1,6 @@
----
-lab:
-    title: 'Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK'
-    module: 'Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API'
----
+# Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
-# Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK
+## Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK
 
 The **CosmosClientBuilder** class is a fluent class designed to build the SDK client to connect to your container and perform operations. Using the builder, you can configure a preferred application region for write operations if your Azure Cosmos DB SQL API account is already configured for multi-region writes.
 
@@ -14,15 +10,13 @@ In this lab, you will configure an Azure Cosmos DB SQL API account with multiple
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    > **Note:** If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles.**
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on Select Folder.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,13 +31,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    > **Note:** Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -55,7 +49,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Wait for the replication task to complete before continuing with this task.
 
-    > &#128221; This operation can take approximately 5-10 minutes.
+    > **Note:** This operation can take approximately 5-10 minutes.
 
 1. Record the value of at least one of the extra regions you created. You will use this region value later in this exercise.
 
@@ -93,7 +87,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Open the context menu for the **22-sdk-multi-region** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
 
-    > &#128221; This command will open the terminal with the starting directory already set to the **22-sdk-multi-region** folder.
+    > **Note:** This command will open the terminal with the starting directory already set to the **22-sdk-multi-region** folder.
 
 1. Build the project using the [dotnet build][docs.microsoft.com/dotnet/core/tools/dotnet-build] command:
 
@@ -101,7 +95,7 @@ Using the credentials from the newly created account, you will connect with the 
     dotnet build
     ```
 
-    > &#128221; You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
+    > **Note:** You may see a compiler warning that the **endpoint** and **key** variables are current unused. You can safely ignore this warning as you will use these variable in this task.
 
 1. Close the integrated terminal.
 
@@ -111,7 +105,7 @@ Using the credentials from the newly created account, you will connect with the 
 
 1. Back in the **Explorer** pane of **Visual Studio Code**, open the **script.cs** code file.
 
-    > &#128221; The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
+    > **Note:** The **[Microsoft.Azure.Cosmos][nuget.org/packages/microsoft.azure.cosmos/3.22.1]** library has already been pre-imported from NuGet.
 
 1. Locate the **string** variable named **endpoint**. Set its value to the **endpoint** of the Azure Cosmos DB account you created earlier.
   
@@ -119,7 +113,7 @@ Using the credentials from the newly created account, you will connect with the 
     string endpoint = "<cosmos-endpoint>";
     ```
 
-    > &#128221; For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
+    > **Note:** For example, if your endpoint is: **https&shy;://dp420.documents.azure.com:443/**, then the C# statement would be: **string endpoint = "https&shy;://dp420.documents.azure.com:443/";**.
 
 1. Locate the **string** variable named **key**. Set its value to the **key** of the Azure Cosmos DB account you created earlier.
 
@@ -127,7 +121,7 @@ Using the credentials from the newly created account, you will connect with the 
     string key = "<cosmos-key>";
     ```
 
-    > &#128221; For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
+    > **Note:** For example, if your key is: **fDR2ci9QgkdkvERTQ==**, then the C# statement would be: **string key = "fDR2ci9QgkdkvERTQ==";**.
 
 1. **Save** the **script.cs** code file.
 
@@ -147,7 +141,7 @@ The fluent **WithApplicationRegion** method is used to configure the preferred r
     string region = "Brazil South"; 
     ```
 
-    > &#128161; Alternatively; you can use the [Microsoft.Azure.Cosmos.Regions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.regions] static class which includes built-in string properties for various Azure regions.
+    > **Note:** Alternatively; you can use the [Microsoft.Azure.Cosmos.Regions][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.regions] static class which includes built-in string properties for various Azure regions.
 
 1. Invoke the [WithApplicationRegion][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.fluent.cosmosclientbuilder.withapplicationregion] method with a parameter of **region** and the [Build][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.fluent.cosmosclientbuilder.build] method fluently on the **builder** variable storing the result in a variable named **client** of type **CosmosClient** that is encapsulated within a using statement:
 
