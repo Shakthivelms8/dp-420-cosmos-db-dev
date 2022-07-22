@@ -12,11 +12,11 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
     > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+1.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+1.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **16-measure-performance** folder.
 
