@@ -10,13 +10,12 @@ In this lab, you'll connect to an Azure Cosmos DB SQL API account using the Azur
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
 
     > Note: If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
 
-1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Open a file, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles**.
+1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles**.
 
 1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
