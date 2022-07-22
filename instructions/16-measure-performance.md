@@ -44,7 +44,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 In Database-v1, data is stored in individual containers. In that database, run queries to get the customer, customer address, and customer password. Review the request charge for each of those queries.
 
-### Query for customer entity
+### Task 2: Query for customer entity
 
 In Database-v1, run a query to get the customer entity and review the request charge.
 
@@ -68,7 +68,7 @@ In Database-v1, run a query to get the customer entity and review the request ch
 
     ![Screenshot that shows the query stats for customer query in the database.](media/17-customer-query-v1.png)
 
-### Query for customer address
+### Task 3: Query for customer address
 
 Run a query to get the customer address entity and review the request charge.
 
@@ -84,7 +84,7 @@ Run a query to get the customer address entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer address query in the database.](media/17-customer-address-query-v1.png)
 
-### Query for customer password
+### Task 4: Query for customer password
 
 Run a query to get the customer password entity and review the request charge.
 
@@ -100,7 +100,7 @@ Run a query to get the customer password entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer password query in the database.](media/17-customer-password-query-v1.png)
 
-### Add up the request charges
+### Task 5: Add up the request charges
 
 Now that we've run all of our queries, let's add up all of the Request Unit costs for them.
 
@@ -111,7 +111,7 @@ Now that we've run all of our queries, let's add up all of the Request Unit cost
 |Customer Password|2.83|
 |**Total RU/s**|**8.49**|
 
-### Measure performance of embedded entities
+### Task 6: Measure performance of embedded entities
 
 Now we're going to query for the same information but with the entities embedded in a single document.
 
