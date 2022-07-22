@@ -1,10 +1,12 @@
-# Lab 3: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
+# Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
+
+## Lab 3: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
 
 Azure Cognitive Search combines a search engine as a service with deep integration with AI capabilities to enrich the information in the search index.
 
 In this lab, you will build an Azure Cognitive Search index that automatically indexes data in an Azure Cosmos DB SQL API container and enriches the data using the Azure Cognitive Services Translator functionality.
 
-## Seed your Azure Cosmos DB SQL API account with sample data
+### Task 1: Seed your Azure Cosmos DB SQL API account with sample data
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container. The tool will then create a set of items that you will observe using the change feed processor running in your terminal window.
 
@@ -39,7 +41,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 1. Close **Visual Studio Code**.
 
-## Create Azure Cognitive Search resource
+### Task 1: Create Azure Cognitive Search resource
 
 Before continuing with this exercise, you must first create a new Azure Cognitive Search instance.
 
@@ -63,7 +65,7 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 
 1. Go to the newly created **Azure Cognitive Search** account resource.
 
-## Build indexer and index for Azure Cosmos DB SQL API data
+### Task 2: Build indexer and index for Azure Cosmos DB SQL API data
 
 You will create an indexer that indexes a subset of data in a specific Azure Cosmos DB SQL API container on an hourly basis.
 
@@ -142,7 +144,7 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 
 1. Navigate to the **Indexes** tab and then select the **products-index** index.
 
-## Validate index with example search queries
+### Task 3: Validate index with example search queries
 
 Now that your materialized view of the Azure Cosmos DB SQL API data is in the search index, you can perform a few basic queries that take advantage of the features in Azure Cognitive Search.
 
