@@ -1,14 +1,10 @@
----
-lab:
-    title: 'Measure performance of entities in separate and embeded containers'
-    module: 'Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API'
----
+# Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
-# Measure performance of entities in separate and embeded containers
+## Lab 1: Measure performance of entities in separate and embeded containers
 
 In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -115,7 +111,7 @@ Now that we've run all of our queries, let's add up all of the Request Unit cost
 |Customer Password|2.83|
 |**Total RU/s**|**8.49**|
 
-## Measure performance of embedded entities
+### Measure performance of embedded entities
 
 Now we're going to query for the same information but with the entities embedded in a single document.
 
@@ -139,4 +135,3 @@ When you compare the RU/s for each query that you ran, you see that the last que
 
 When you're searching for a single item and know the partition key and ID of the data, you can retrieve this data via a *point-read* by calling `ReadItemAsync()` in the Azure Cosmos DB SDK. A point-read is even faster than our query. For the same customer data, the cost is just 1 RU/s, which is a nearly threefold improvement.
 
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
