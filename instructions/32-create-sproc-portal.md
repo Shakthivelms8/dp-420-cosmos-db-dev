@@ -25,8 +25,6 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
 1. Wait for the deployment task to complete before continuing with this task.
 
 1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Data Explorer** pane.
@@ -44,7 +42,10 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Still within the **Data Explorer**, expand the **cosmicworks** database node, then select the new **products** container node within the **SQL API** navigation tree.
 
-1. Select **New Stored Procedure**.
+1. Select the **"..." (1)** followed by **New Stored Procedure (2)** and finally select **New Stored Procedure (3)** again.
+
+    ![](media/new-stored-procedure-01.png)
+
 
 1. In the **Stored Procedure Id** field, enter the value **createDoc**.
 
@@ -230,7 +231,6 @@ To wrap up things, you will use the Data Explorer to issue a SQL query that will
 
 1. Observe the two documents you created in this lab as the results of executing this query.
 
-1. Close your web browser window or tab.
+1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and delete.
 
-[azure.github.io/azure-cosmosdb-js-server/context.html]: https://azure.github.io/azure-cosmosdb-js-server/Context.html
-[azure.github.io/azure-cosmosdb-js-server/global.html]: https://azure.github.io/azure-cosmosdb-js-server/global.html
+  ![](media/delete-database-1.png)
