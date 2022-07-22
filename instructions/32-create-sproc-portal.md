@@ -47,7 +47,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     ![](media/new-stored-procedure-01.png)
 
 
-1. In the **Stored Procedure Id** field, enter the value **createDoc**.
+1. In the **Stored Procedure Id** field, enter the value **createDoc**. Select **Save**.
 
 1. Delete the contents of the editor area.
 
@@ -111,7 +111,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     }
     ```
 
-1. Select **Save** to persist the changes to the stored procedure.
+1. Select **Update** to persist the changes to the stored procedure.
 
 1. Select **Execute** and then execute the stored procedure using the following input parameters:
 
@@ -233,4 +233,4 @@ To wrap up things, you will use the Data Explorer to issue a SQL query that will
 
 1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and delete.
 
-  ![](media/delete-database-1.png)
+    ![](media/delete-database-1.png)

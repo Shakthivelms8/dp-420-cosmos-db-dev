@@ -14,7 +14,7 @@ In this lab, you'll create a new UDF using the .NET SDK and then use the Data Ex
 
 3.  Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-### Task 2: Fetch the Keys and endpoint from CosmosDB account
+### Task 2: Fetch the Keys and endpoint from Cosmos DB account
 
 On the Azure Cosmos DB SQL API account ,you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
