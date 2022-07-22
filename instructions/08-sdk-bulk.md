@@ -1,3 +1,5 @@
+# Module 4 - Implement Azure Cosmos DB SQL API point operations
+
 ## Lab 3 :  Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
 The easiest way to learn how to perform a bulk operation is to attempt to push many documents to an Azure Cosmos DB SQL API account in the cloud. Using the bulk features of the SDK, this can be done with some minor help from the [System.Threading.Tasks][docs.microsoft.com/dotnet/api/system.threading.tasks] namespace.
@@ -17,7 +19,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
-## Use an Azure Cosmos DB SQL API account and configure the SDK project
+### Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project
 
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **08-sdk-bulk** folder.
 
@@ -61,7 +63,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Close the integrated terminal.
 
-## Bulk inserting a twenty-five thousand documents
+### Task 2: Bulk inserting a twenty-five thousand documents
 
 Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB SQL API account are relatively close to each other geographically speaking.
 
@@ -195,7 +197,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
 
 1. Close **Visual Studio Code**.
 
-## Observe the results
+### Task 3: Observe the results
 
 Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at the Data Explorer.
 
