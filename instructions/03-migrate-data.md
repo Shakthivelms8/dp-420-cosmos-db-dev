@@ -1,50 +1,16 @@
----
-lab:
-    title: 'Migrate existing data using Azure Data Factory'
-    module: 'Module 2 - Plan and implement Azure Cosmos DB SQL API'
----
+# Module 2 - Plan and implement Azure Cosmos DB SQL API
 
-# Migrate existing data using Azure Data Factory
+## Migrate existing data using Azure Data Factory
 
 In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
 
 In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
 
-## Create and seed your Azure Cosmos DB SQL API account
+### Lab 1: Create and seed your Azure Cosmos DB SQL API account
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container at **4,000** request units per second (RU/s). Once created, you will adjust the throughput down to 400 RU/s.
 
 To accompany the products container, you will create a **flatproducts** container manually that will be the target of the ETL transformation and load operation at the end of this lab.
-
-1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
-
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
-
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
-
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
-    | **Location** | *Choose any available region* |
-    | **Capacity mode** | *Provisioned throughput* |
-    | **Apply Free Tier Discount** | *Do Not Apply* |
-    | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
-
-1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
-
-    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
-
-    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
-
-1. Close your web browser window or tab.
 
 1. Start **Visual Studio Code**.
 
@@ -120,7 +86,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *Select an existing resource group* |
     | **Name** | *Enter a globally unique name* |
     | **Region** | *Choose any available region* |
     | **Version** | *V2* |
@@ -219,6 +185,3 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 1. Observe the results of the query.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[nuget.org/packages/cosmicworks]: https://www.nuget.org/packages/cosmicworks
