@@ -21,6 +21,28 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 ### Task 1: Use an Azure Cosmos DB SQL API account and configure the SDK project
 
+1. Go to the **Azure Cosmos DB** account resource, which you created in previous lab and navigate to the **Keys** pane.
+
+1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
+
+    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+
+    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
+
+1. Still **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
+
+1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
+
+    | **Setting** | **Value** |
+    | ---: | :--- |
+    | **Database id** | *Create new* &vert; *`cosmicworks`* |
+    | **Share throughput across containers** | *Do not select* |
+    | **Container id** | *`products`* |
+    | **Partition key** | *`/categoryId`* |
+    | **Container throughput** | *Autoscale* &vert; *`4000`* |
+
+1. Close your web browser window or tab.
+
 1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **08-sdk-bulk** folder.
 
 1. Open the **script.cs** code file within the **08-sdk-bulk** folder.
