@@ -39,6 +39,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Apply Free Tier Discount** | *`Do Not Apply`* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Uncheck* |
 
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Wait for the deployment task to complete before continuing with this task.
 

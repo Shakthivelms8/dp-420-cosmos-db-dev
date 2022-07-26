@@ -1,12 +1,12 @@
 # Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
-## Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
+## Lab 2: Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
 
 When planning for an Azure Cosmos DB SQL API account, knowing our most popular queries can help us tune the indexing policy so that queries are as performant as possible.
 
 In this lab, we will use the Data Explorer to test SQL queries with the default indexing policy and an indexing policy that includes a composite index.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -19,12 +19,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
+    | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
 
-    > **Note:** Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -52,7 +53,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Seed your Azure Cosmos DB SQL API account with sample data
+### Task 2: Seed your Azure Cosmos DB SQL API account with sample data
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container. The tool will then create a set of items that you will observe using the change feed processor running in your terminal window.
 
@@ -87,7 +88,7 @@ You will use a command-line utility that creates a **cosmicworks** database and 
 
 1. Close **Visual Studio Code**.
 
-## Execute SQL queries and measure their request unit charge
+### Task 3: Execute SQL queries and measure their request unit charge
 
 Before you modify the indexing policy, first, you will run a few sample SQL queries to get a baseline request unit charge expressed in RUs.
 
@@ -145,7 +146,7 @@ Before you modify the indexing policy, first, you will run a few sample SQL quer
 
 1. Observe the results and stats of the query. The request unit charge has increased due to the **ORDER BY** clause.
 
-## Create a composite index in the indexing policy
+### Task 4: Create a composite index in the indexing policy
 
 Now, you will need to create a composite index if you sort your items using multiple properties. In this task, you will create a composite index to sort items by their categoryName, and then their actual name.
 
@@ -334,4 +335,4 @@ Now, you will need to create a composite index if you sort your items using mult
 
 1. Close your web browser window or tab.
 
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
+

@@ -1,24 +1,24 @@
 # Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
-## Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
+## Lab 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 For write-heavy workloads or workloads with large JSON objects, it can be advantageous to optimize the indexing policy to only index properties that you know you will want to use in your queries.
 
 In this lab, we will use a test .NET application to insert a large JSON item into an Azure Cosmos DB SQL API container using the default indexing policy, and then using an indexing policy that has been tuned slightly.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
-If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > **Note:** If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles.**
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on Select Folder.
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 2: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -31,10 +31,12 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing resource group* |
+    | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Serverless* |
+
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -62,7 +64,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Run the test .NET application using the default indexing policy
+### Task 3: Run the test .NET application using the default indexing policy
 
 This lab has a pre-built test .NET application that will take a large JSON object and create a new item in the Azure Cosmos DB SQL API container. Once the single write operation is complete, the application will output the item’s unique identifier and RU charge to the console window.
 
@@ -122,7 +124,7 @@ This lab has a pre-built test .NET application that will take a large JSON objec
 
     > **Note:** You will re-use this terminal later in this exercise. It's important to leave the terminal open so you can compare the original and updated RU charges.
 
-## Update the indexing policy and rerun the .NET application
+### Task 4: Update the indexing policy and rerun the .NET application
 
 This lab scenario will assume that our future queries focus primarily on the name and categoryName properties. To optimize for our large JSON item, you will exclude all other fields from the index by creating an indexing policy that starts by excluding all paths. Then the policy will selectively include specific paths.
 
@@ -228,5 +230,8 @@ This lab scenario will assume that our future queries focus primarily on the nam
 
 1. Close **Visual Studio Code**.
 
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
+## Cleanup
+
+1. Delete the Azure Cosmos DB accounts that were created by in this lab.
+
+
