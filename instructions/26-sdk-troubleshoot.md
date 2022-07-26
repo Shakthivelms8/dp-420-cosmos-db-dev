@@ -1,5 +1,5 @@
 
-# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
 ## Lab 2: Troubleshoot an application using the Azure Cosmos DB SQL API SDK
 

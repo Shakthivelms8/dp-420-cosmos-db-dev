@@ -8,15 +8,15 @@ In this lab, you'll connect to the Azure Cosmos DB Emulator from the Azure SDK f
 
 ### Prepare your development environment
 
-If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > Note If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1.  Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles**.
-  
-1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
 ### Task 1: Start the Azure Cosmos DB Emulator
 

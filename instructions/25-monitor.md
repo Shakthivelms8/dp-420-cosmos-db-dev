@@ -1,5 +1,5 @@
 
-# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+# Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
 ## Lab 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
 

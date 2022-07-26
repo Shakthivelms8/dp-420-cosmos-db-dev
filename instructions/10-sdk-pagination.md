@@ -6,19 +6,20 @@ Azure Cosmos DB queries will typically have multiple pages of results. Paginatio
 
 In this lab, you'll create a feed iterator that can be used in a loop to iterate over your entire result set.
 
-### Prepare your development environment
 
-If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+### Task 1: Prepare your development environment
 
-1. Start **Visual Studio Code** (the program icon is pinned to the Desktop).
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > Note: If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-1. Open a File, From the top-left options, Click on File->Open Folder and navigate to C:\AllFiles.
+    ![](media/C-hash-extension.png)
 
-1. Select the folder dp-420-cosmos-db-dev-stage and Click on Select Folder.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-### Task 1: Seed the Azure Cosmos DB SQL API account with data
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+
+### Task 2: Seed the Azure Cosmos DB SQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
@@ -51,7 +52,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
 1. Close the integrated terminal.
 
-### Task 2: Paginate through small result sets of a SQL query using the SDK
+### Task 3: Paginate through small result sets of a SQL query using the SDK
 
 When processing query results, you must make sure your code progresses through all pages of results and checks to see if any more pages are remaining before making subsequent requests.
 

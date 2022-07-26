@@ -27,11 +27,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | --: | :-- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource Group** | *select an existing resource group* |
+    | **Resource Group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Select provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
+
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
 

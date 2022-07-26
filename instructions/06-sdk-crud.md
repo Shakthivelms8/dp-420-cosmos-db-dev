@@ -8,16 +8,15 @@ In this lab, you’ll use the SDK to perform everyday CRUD operations on an item
 
 ### Prepare your development environment
 
-If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1.  Start **Visual Studio Code** (the program icon is pinned to the Desktop).
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > Note: If you are not already familiar with the Visual Studio Code interface, review the [Getting Started documentation][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open a File, From the top-left options, Click on **File->Open Folder** and navigate to **C:\AllFiles**.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-1. Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
-
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 ### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
