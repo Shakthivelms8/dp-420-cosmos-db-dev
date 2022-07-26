@@ -113,6 +113,8 @@ We're now ready to run a workload to monitor its usage of the Azure Cosmos DB Ac
 
     > &#128221; You will notice a couple of warnings in yellow since the compiler detects that the script runs many operations synchronously and does not wait for a reply of the operations. You can ignore these warning since that is the expected behaviour to run multiple SQL scripts simultaneously.
 
+    >**NOTE!!**: Visual studio Code might crash after running the above command, you can rerun the command and continue to the next task.
+
 ### Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
 
 In this part of the exercise, we'll go back to the browser and review some of the Azure Monitor Insight and Metric reports.
