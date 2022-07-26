@@ -1,26 +1,24 @@
 # Module 12 - Manage an Azure Cosmos DB SQL API solution using DevOps practices
 
-## Create an Azure Cosmos DB SQL API container using Azure Resource Manager templates
+## Lab 2: Create an Azure Cosmos DB SQL API container using Azure Resource Manager templates
 
 Azure Resource Manager templates are JSON files that declaratively define the infrastructure that you wish to deploy to Azure. Azure Resource Manager templates are a common infrastrucutre-as-code solution to deploying services to Azure. Bicep, takes the concept a bit further by defining an easier to read domain-specific language that can be used to create JSON templates.
 
 In this lab, you'll create a new Azure Cosmos DB account, database, and container using an Azure Resource Manager template. You will first create the template from raw JSON, then you will create the template using the Bicep domain-specific language.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
-If you have not already cloned the lab code repository for **DP-420-xxxxx** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code**.
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > **Note** If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-    > **Note** You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
-
-## Create Azure Cosmos DB SQL API resources using Azure Resource Manager templates
+### Task 2: Create Azure Cosmos DB SQL API resources using Azure Resource Manager templates
 
 The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes it possible to deploy accounts, databases, and containers using JSON files. While the files may be complex, they do follow a predictable format and can be written with the assistance of a Visual Studio Code extension.
 
@@ -114,7 +112,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **dp420**, the command will be **$resourceGroup="dp420"**.
+    > **Note** For example, if your resource group is named **dp-420**, the command will be **$resourceGroup="dp-420"**.
 
 1. Use the **echo** cmdlet to write the value of the **$resourceGroup** variable to the terminal output using the following command:
 
@@ -223,7 +221,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
 
 1. Close the integrated terminal.
 
-## Observe deployed Azure Cosmos DB resources
+### Task 3: Observe deployed Azure Cosmos DB resources
 
 Once your Azure Cosmos DB SQL API resources are deployed, you can navigate to the resources in the Azure portal. Using the Data Explorer, you will validate that the account, database, and container were all deployed and configured correctly.
 
@@ -245,7 +243,7 @@ Once your Azure Cosmos DB SQL API resources are deployed, you can navigate to th
 
 1. Close your web browser window or tab.
 
-## Create Azure Cosmos DB SQL API resources using Bicep templates
+### Task 4: Create Azure Cosmos DB SQL API resources using Bicep templates
 
 Bicep is an efficient domain-specific language that makes it simpler and easier to deploy Azure resources than Azure Resource Manager templates. You will deploy the same exact resource using Bicep and a different name to illustrate the difference\[s\].
 
@@ -388,7 +386,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
 
 1. Close **Visual Studio Code**.
 
-## Observe Bicep template deployment results
+### Task 5: Observe Bicep template deployment results
 
 Bicep deployments can be validated using many of the same techniques as Azure Resource Manager deployments. Not only will you validate that your account, database, and container were successfully deployed; you will also view the deployment history across all six deployments.
 
@@ -417,8 +415,3 @@ Bicep deployments can be validated using many of the same techniques as Azure Re
 1. Observe the values within the **Settings** section. Specifically, observe that the **Partition key** value is set to **/categoryId**.
 
 1. Close your web browser window or tab.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/cli/azure/deployment/group]: https://docs.microsoft.com/cli/azure/deployment/group
-[github.com/arm-template-guide]: https://raw.githubusercontent.com/Sidney-Andrews/acdbsad/solutions/31-create-container-arm-template/deploy.json
-[github.com/bicep-template-guide]: https://raw.githubusercontent.com/Sidney-Andrews/acdbsad/solutions/31-create-container-arm-template/deploy.bicep

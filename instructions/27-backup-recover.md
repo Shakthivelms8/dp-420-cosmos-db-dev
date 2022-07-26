@@ -1,16 +1,12 @@
----
-Lab:
-    title: 'Recover a database or container from a recovery point'
-    module: 'Module 11 - Monitor and troubleshoot an Azure Cosmos DB SQL API solution'
----
+# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
-# Recover a database or container from a recovery point 
+## Lab 3: Recover a database or container from a recovery point 
 
 Azure Automatically takes encrypted backups of your data. These backups are taken in two modes, **Periodic** and **Continuous** backup modes.
 
 In this lab, you'll do `backup` and `restores` using the continuous backup mode. First, you'll Create an Azure Cosmos DB account. You'll then create two containers and add a few documents to them. Next, you'll then update a couple of the documents in those containers. Finally you'll create restores of the account to a point before each delete.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 1: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB SQL API account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
 
@@ -22,7 +18,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
     | **Setting** | **Value** |
     | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
+    | **Subscription** | *DP-420-DeploymentID* |
     | **Resource group** | *Select an existing or create a new resource group* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
@@ -30,13 +26,16 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Global Distribution** TAB | Disable Multi-region Writes |
 
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
+
+
     > &#128221; Note that you can enabled **Continuous** mode during the creation of the Azure Cosmos DB account, by selecting it under the **Backup Policy** tab. In this Lab you have the choice of enabling this feature during account creation or after the account is created in the optional section below. **Enabling the feature *after* the account is created *could take longer than 5 minutes*.**
 
     > &#128221; Note that *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*.
 
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
-## Add a database and two containers to the account
+### Task 2: Add a database and two containers to the account
 
 Let's create a database and a couple of containers.
 
@@ -67,7 +66,7 @@ Let's create a database and a couple of containers.
     | **Partition key** | *`/id`* |
     | **Container throughput (400 - unlimited RU/s)** | *Manual* throughput: *400*|
 
-## Add items to the containers
+### Task 3: Add items to the containers
 
 Let's add some documents to those containers.
 
@@ -203,7 +202,7 @@ Let's add some documents to those containers.
   }
 ```
 
-## Change the default backup mode to continuous (Optional if feature not enabled during the account creation)
+### Task 4: Change the default backup mode to continuous (Optional if feature not enabled during the account creation)
 
 *If you didn't enable the feature during the Azure Cosmos DB account creation, you'll need to do it now.*  Changing the backup mode is simple, all that is needed is to change one setting to **On**. Let's change it now.
 
@@ -215,7 +214,7 @@ Let's add some documents to those containers.
 
     > &#128221; Note that *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*. If you did not disable Multi-region writes when you created your Azure Cosmos DB account, you will need to do it now or enabling the continuous backup feature will fail.  You can disable multi-region writes unde the **Replicate data globally** *Settings* section.
 
-## Delete one of the salesOrder documents
+### Task 5: Delete one of the salesOrder documents
 
 1. Under **Data Explorer**, run the following query to get the current date and time. Copy that timestamp to notepad. This Time stamp should be in UTC.
 
@@ -225,7 +224,7 @@ Let's add some documents to those containers.
 
 1. Under **Data Explorer**, locate the **salesOrder** document with **id** `0019092E-BD25-48F5-8050-7051B2655BC5`. Delete the Document, verify the document is no longer there.
 
-## Restore the database to the point before you deleted the salesOrder document
+### Task 6: Restore the database to the point before you deleted the salesOrder document
 
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
@@ -245,7 +244,7 @@ Let's add some documents to those containers.
 
 1. This restore could take 15 minutes or more, go to the next section and leave this restore running in the background.
 
-## Delete the customer container
+### Task 7: Delete the customer container
 
 1. Under **Data Explorer**, run the following query to get the current date and time. Copy that timestamp to notepad.
 
@@ -255,7 +254,7 @@ Let's add some documents to those containers.
 
 1. Delete the **customer** container.
 
-## Restore the database to the point before you deleted the salesOrder document
+### Task 8: Restore the database to the point before you deleted the salesOrder document
 
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
@@ -275,7 +274,7 @@ Let's add some documents to those containers.
 
 1. This restore could take 15 minutes or more, go to the next section and leave this restore running in the background.
 
-## Review the data restored
+### Task 9: Review the data restored
 
 Restores can take a long time depending on the size of the database and other factors. Once the Azure Cosmos DB account restores are finished:
 
@@ -289,5 +288,4 @@ Restores can take a long time depending on the size of the database and other fa
 
 1. Delete the Sales database and if needed, delete the original Azure Cosmos DB account.
 
-[/azure/cosmos-db/continuous-backup-restore-introduction]:https://docs.microsoft.com/azure/cosmos-db/continuous-backup-restore-introduction
 

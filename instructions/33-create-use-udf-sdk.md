@@ -8,11 +8,16 @@ In this lab, you'll create a new UDF using the .NET SDK and then use the Data Ex
 
 ### Task 1: Prepare your development environment
 
-1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-2. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-3.  Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+    ![](media/C-hash-extension.png)
+
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
+
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
+
 
 ### Task 2: Fetch the Keys and endpoint from Cosmos DB account
 

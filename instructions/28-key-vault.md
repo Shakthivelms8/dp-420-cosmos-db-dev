@@ -1,28 +1,23 @@
----
-lab:
-    title: 'Store Azure Cosmos DB SQL API account keys in Azure Key Vault'
-    module: 'Module 11 - Monitor and troubleshoot an Azure Cosmos DB SQL API solution'
----
 
-# Store Azure Cosmos DB SQL API account keys in Azure Key Vault
+# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+
+## Lab 4: Store Azure Cosmos DB SQL API account keys in Azure Key Vault
 
 Adding an Azure Cosmos DB account connection code to your application is as simple as providing the account's URI and keys. This security information might sometimes be hard-coded into the application code. However, if your application is being deployed to the Azure App Service, you can save the encrypt connection information into Azure Key Vault.
 
 In this lab, we'll encrypt and store the Azure Cosmos DB account connection string into the Azure Key Vault. We will then create an Azure App Service webapp that will retrieve those credentials from the Azure Key Vault. The application will use these credentials and connect to the Azure Cosmos DB account. The application will then create some documents in the Azure Cosmos DB account containers and return its status back to a web page.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
-If you haven't already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code**.
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
-
-1. Once the repository has been cloned, ***CLOSE*** *Visual Studio Code*. We will later open it pointing directly to the **28-key-vault** folder.
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
 ## Create an Azure Cosmos DB SQL API account
 
@@ -37,13 +32,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+    >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -294,3 +289,9 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
 1. Go to your Azure Cosmos DB account and verify that you either have a new **GlobalCustomers** database with data in it, or if the database already existed, if there are now more items in the database.
 
 We have now successfully used Azure Key Vault to protect the keys of your Azure Cosmos DB account.
+
+## Cleanup
+
+1. Delete the Azure Cosmos DB accounts that were created by in this lab.
+
+1. Delete the original Azure Cosmos DB account.

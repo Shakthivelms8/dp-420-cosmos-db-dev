@@ -1,30 +1,25 @@
----
-lab:
-    title: 'Use Azure Monitor to analyze an Azure Cosmos DB SQL API account'
-    module: 'Module 11 - Monitor and troubleshoot an Azure Cosmos DB SQL API solution'
----
 
-# Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
+# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+
+## Lab 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
 
 Azure Monitor is a full stack monitoring service in Azure that provides a complete set of features to monitor Azure resources.  Azure Cosmos DB creates monitoring data using Azure Monitor.  Azure Monitor captures Cosmos DB's metrics and telemetry data.
 
 In this lab, you'll run a simulated workload against Azure Cosmos DB containers and analyze how that workload affects the Azure Cosmos DB account.
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
-If you haven't already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code**.
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
-
-## Create an Azure Cosmos DB SQL API account
+### Task 2: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB SQL API account programatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
 
@@ -37,14 +32,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Resource group** | *Select DP-420-DeploymentID* |
+    | **Account Name** | *Cosmosdb-DeploymentID* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *`Do Not Apply`* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Uncheck* |
 
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -59,7 +53,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Minimize, but don't close your browser window. We'll come back to the Azure portal a few minutes after we start a background workload in the next steps.
 
 
-## Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script
+### Task 3: Import the Microsoft.Azure.Cosmos and Newtonsoft.Json libraries into a .NET script
 
 The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotnet-add-package] command to import packages from a pre-configured package feed. A .NET installation uses NuGet as its default package feed.
 
@@ -81,7 +75,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
     dotnet add package Newtonsoft.Json --version 13.0.1
     ```
 
-## Run a script to create the containers and the workload
+### Task 4: Run a script to create the containers and the workload
 
 We're now ready to run a workload to monitor its usage of the Azure Cosmos DB Account.  The script we'll be running, behind the scenes. This script will create three containers and load some data into those containers. The script will then run some SQL queries randomly to emulate multiple user applications hitting the Azure Cosmos DB account. 
 
@@ -118,11 +112,11 @@ We're now ready to run a workload to monitor its usage of the Azure Cosmos DB Ac
 
     > &#128221; You will notice a couple of warnings in yellow since the compiler detects that the script runs many operations synchronously and does not wait for a reply of the operations. You can ignore these warning since that is the expected behaviour to run multiple SQL scripts simultaneously.
 
-## Use Azure Monitor to Analyze the Azure Cosmos DB account usage
+### Task 5: Use Azure Monitor to Analyze the Azure Cosmos DB account usage
 
 In this part of the exercise, we'll go back to the browser and review some of the Azure Monitor Insight and Metric reports.
 
-### Azure Monitor Metrics's reports
+#### Subtask 1: Azure Monitor Metrics's reports
 
 1. Go back to the opened browser window we minimized earlier. If you closed it, open a new one and go to your Azure Cosmos DB account page under portal.azure.com.
 
@@ -154,7 +148,7 @@ In this part of the exercise, we'll go back to the browser and review some of th
 
 > &#128221; One more way to share your chart is by clicking on the Share pulldown and downloading it as an Excel file or the Copy link option.
 
-### Azure Monitor Insights reports
+#### Subtask 2: Azure Monitor Insights reports
 
 We might need to spend some time fine-tuning our Azure Monitor Metrics diagnostics reports.  Cosmos DB Insights provide a view of overall performance, failures, and operational health of your Azure Cosmos DB resources. These Insight charts will be pre-built charts similar to the Metric ones. Let's take a look at some of them.
 
@@ -174,16 +168,10 @@ We might need to spend some time fine-tuning our Azure Monitor Metrics diagnosti
 
 1. Select the System Tab. If your application was creating, deleting, or querying the accounts metadata frequently, it's possible to have 429 exceptions.  These charts help us determine if that frequent metadata access is the cause of our 429 exceptions. Additionally, we can determine the status of our metadata requests.  
 
-### Azure Monitor Insights reports
+#### Subtask 3: Azure Monitor Insights reports
 
 1. If the Program is still running, go back to the Visual Studio Code Command Terminal.
 
 1. Close the integrated terminal.
 
 1. Close **Visual Studio Code**.
-
-[code.visualstudio.com/docs/getstarted]: https://code.visualstudio.com/docs/getstarted/tips-and-tricks
-[docs.microsoft.com/dotnet/core/tools/dotnet-add-package]: https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package
-[docs.microsoft.com/dotnet/core/tools/dotnet-run]: https://docs.microsoft.com/dotnet/core/tools/dotnet-run
-[nuget.org/packages/microsoft.azure.cosmos/3.22.1]: https://www.nuget.org/packages/Microsoft.Azure.Cosmos/3.22.1
-[nuget.org/packages/Newtonsoft.Json/13.0.1]: https://www.nuget.org/packages/Newtonsoft.Json/13.0.1

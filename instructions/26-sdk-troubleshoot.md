@@ -1,64 +1,47 @@
----
-lab:
-    title: 'Troubleshoot an application using the Azure Cosmos DB SQL API SDK'
-    module: 'Module 11 - Monitor and troubleshoot an Azure Cosmos DB SQL API solution'
----
 
-# Troubleshoot an application using the Azure Cosmos DB SQL API SDK
+# Module 13: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
+
+## Lab 2: Troubleshoot an application using the Azure Cosmos DB SQL API SDK
 
 Azure Cosmos DB offers an extensive set of response codes, which help us easily troubleshoot issues that could arise with our different operation types. The catch is to make sure we program proper error handling when creating apps for Azure Cosmos DB.
 
 In this lab, we'll create a menu driven program that will allow us to insert or delete one of two documents. The main purpose of this lab is to introduce us to how to use some of the most common response codes and how to use them in our app's error handling code.  While we'll code error handling for multiple response codes, we'll only trigger two different types of conditions.  Additionally the error handling won't do anything complex, depending on the response code, it will either display a message to the screen or wait 10 seconds and retry the operation one more time. 
 
-## Prepare your development environment
+### Task 1: Prepare your development environment
 
-If you haven't already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-1. Start **Visual Studio Code**.
+2. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+    ![](media/C-hash-extension.png)
 
-1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+3. Select the **file** option on the top left of the screen, from the pane options, select **Open Folder** and navigate to **C:\AllFiles**.
 
-    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+4. Select the folder **dp-420-cosmos-db-dev** and click on **Select Folder**.
 
-1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Create an Azure Cosmos DB SQL API account
+### Task 2: Fetch the Keys and endpoint from Cosmos DB account
 
-Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you'll select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key. Use the endpoint and key to connect to the Azure Cosmos DB SQL API account programmatically. Use the endpoint and key on the connection strings of the Azure SDK for .NET or any other SDK.
+On the Azure Cosmos DB SQL API account ,you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
-1. Sign into the portal using the Microsoft credentials associated with your subscription.
+1. If not already signed in, sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Select your resource group **DP-420-DeploymentID**, and select the **Cosmos DB** account you created in lab 1.
 
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Subscription** | *Your existing Azure subscription* |
-    | **Resource group** | *Select an existing or create a new resource group* |
-    | **Account Name** | *Enter a globally unique name* |
-    | **Location** | *Choose any available region* |
-    | **Capacity mode** | *Provisioned throughput* |
-    | **Apply Free Tier Discount** | *`Do Not Apply`* |
-
-    > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
-
-1. Wait for the deployment task to complete before continuing with this task.
-
-1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+1. Navigate to the **Keys** pane.
 
 1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-    1. Record the value of the **URI** field. You'll use this **endpoint** value later in this exercise.
+1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+    
+1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
 
-    1. Record the value of the **PRIMARY KEY** field. You'll use this **key** value later in this exercise.
-
-1. Minimize, but don't close your browser window. We'll come back to the Azure portal a few minutes after we start a background workload in the next steps.
+1. Close your web browser window or tab.
 
 
-## Import the Microsoft.Azure.Cosmos library into a .NET script
+### Task 3: Import the Microsoft.Azure.Cosmos library into a .NET script
 
 The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotnet-add-package] command to import packages from a pre-configured package feed. A .NET installation uses NuGet as its default package feed.
 
@@ -74,7 +57,7 @@ The .NET CLI includes an [add package][docs.microsoft.com/dotnet/core/tools/dotn
     dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
     ```
 
-## Run a script to create menu-driven options to insert and delete documents.
+### Task 4: Run a script to create menu-driven options to insert and delete documents.
 
 Before we can run our application, we need to connect it to our Azure Cosmos DB account. 
 
@@ -114,7 +97,7 @@ Before we can run our application, we need to connect it to our Azure Cosmos DB 
     >Select an option:
     >```
 
-## Time to insert and delete documents.
+### Task 5: Time to insert and delete documents.
 
 1. Select **1** and **ENTER** to insert the first document. The program will insert the first document and return the following message.
 
