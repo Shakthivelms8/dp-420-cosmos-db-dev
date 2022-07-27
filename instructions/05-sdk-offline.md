@@ -22,7 +22,9 @@ In this lab, you'll connect to the Azure Cosmos DB Emulator from the Azure SDK f
 
 Your environment should already have the emulator pre-installed. If not, refer to the [installation instructions][docs.microsoft.com/azure/cosmos-db/local-emulator] to install the Azure Cosmos DB Emulator. Once the emulator has started, you can retrieve the connection string and use it to connect to the emulator using the Azure SDK for .NET or any other SDK of your choice.
 
-1. Click windows -> select default apps -> scroll down to internet explorer part [ change it to Microsoft Edge ].
+1. Seach for Default apps in the Windows search bar and select it.
+
+1. On the Default apps blade, click on Internet Explorer and select Microsoft Edge for setting Edge as the default browser.
 
 1. Start the **Azure Cosmos DB Emulator** from Start Menu of window. then click on the ^ key on right side of window and then select icon of Azure Cosmos DB Emulator and click on the Open Data explorer.
 
