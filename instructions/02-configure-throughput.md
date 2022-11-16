@@ -84,11 +84,13 @@ Now, we are going to create a provisioned throughput account with more tradition
     | --: | :-- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Account Name** | *cosmosdb420-XXXXXX* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Select provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
+    
+    >**Note**: Replace XXXXXX with the DeplymentID value provided in the environment details page.
 
 1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
 
@@ -152,3 +154,10 @@ Now, we are going to create a provisioned throughput account with more tradition
     | **RU/s** | *`1000`* |
 
 1. Back in the **Data Explorer** pane, expand the **manualthroughputdb** database node and then observe the **childcontainer** container node within the hierarchy.
+
+1. From the **left navigation pane** click on **keys** under Settings. 
+
+1. In the Keys screen for your Azure Cosmos DB account, move your mouse to the right of the **URI**, and click copy to notepad.
+
+1. In the Keys screen for your Azure Cosmos DB account, move your mouse to the right of the **PRIMARY KEY**, and click copy to notepad.
+
