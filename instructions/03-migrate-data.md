@@ -51,7 +51,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **cosmosdb420-XXXXX** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
@@ -90,11 +90,12 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
     | **Name** | *Enter a globally unique name* |
     | **Region** | *Choose any available region* |
     | **Version** | *V2* |
-    | **Git configuration** | *Configure Git later* |
+   
+1. Click on **Next: Git configuration**. In **Git configuration** blade tick *Configure Git later*
 
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
-1. Wait for the deployment task to complete before continuing with this task.
+1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
 
 1. Go to the newly created **Azure Data Factory** resource and select **Open Azure Data Factory Studio**.
 
@@ -137,9 +138,9 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
         products p
     ```
 
-1. Select **Preview data** to test the query's validity. Select **Next** to move to the **Target** step of the wizard.
+1. Select **Preview data** to test the query's validity. Select **Next** to move to the **Destination** step of the wizard.
 
-1. In the **Target** step of the wizard, in the **Target type** list, select **Azure Cosmos DB (SQL API)**.
+1. In the **Destination** step of the wizard, in the **Destination type** list, select **Azure Cosmos DB (SQL API)**.
 
 1. In the **Connection** list, select **CosmosSqlConn**.
 
@@ -159,7 +160,7 @@ Now that the Azure Cosmos DB SQL API resources are in place, you will create an 
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **Azure Cosmos DB account** resource you created in this lab.
+1. Select **Resource groups**, then select the resource group you created or viewed earlier in this lab, and then select the **cosmosdb420-XXXXX** Azure Cosmos DB account resource you created in this lab.
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
