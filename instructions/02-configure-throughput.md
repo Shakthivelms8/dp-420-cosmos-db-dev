@@ -155,9 +155,10 @@ Now, we are going to create a provisioned throughput account with more tradition
 
 1. Back in the **Data Explorer** pane, expand the **manualthroughputdb** database node and then observe the **childcontainer** container node within the hierarchy.
 
-1. From the **left navigation pane** click on **keys** under Settings. 
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
 
-1. In the Keys screen for your Azure Cosmos DB account, move your mouse to the right of the **URI**, and click copy to notepad.
+1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
 
-1. In the Keys screen for your Azure Cosmos DB account, move your mouse to the right of the **PRIMARY KEY**, and click copy to notepad.
+    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
 
+    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.
