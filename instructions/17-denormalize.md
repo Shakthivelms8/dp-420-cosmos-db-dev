@@ -6,6 +6,42 @@ Using the Relational model could allow us to place different entities in their o
 
 In this lab, you'll look at the benefits of how denormalizing data and aggregates can help us reduce cost and how we can use the change feed to mantain referential integrity on the denormalized data.
 
+## Prepare your development environment
+
+If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
+
+1. Start **Visual Studio Code**.
+
+    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+
+1. Open the command palette and run **Git: Clone** to clone the ``https://github.com/microsoftlearning/dp-420-cosmos-db-dev`` GitHub repository in a local folder of your choice.
+
+    > &#128161; You can use the **CTRL+SHIFT+P** keyboard shortcut to open the command palette.
+
+1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
+
+1. In **Visual Studio Code**, in the **Explorer** pane, browse to the **17-denormalize** folder.
+
+1. Open the context menu for the **17-denormalize** folder and then select **Open in Integrated Terminal** to open a new terminal instance.
+
+1. If the terminal opens as a **Windows Powershell** terminal, open a new **Git Bash** terminal.
+
+    > &#128161; To open a **Git Bash** terminal, on the right hand side of the the terminal menu,click on the pulldown besides the **+** sign and choose *Git Bash*.
+
+1. In the **Git Bash terminal**, run the following commands. The commands open a browser window to connect to the azure portal where you will use the provided lab credentials, run a script that creates a new Azure Cosmos DB account, and then build and start the app you use to populate the database and complete the exercises. *Once the script ask you for the provided credential for the azure account, the build can take 15-20 minutes to finish, so it might be a good time to get some coffee or tea*.
+
+    ```
+    az login
+    cd 17-denormalize
+    bash init.sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.22.1
+    dotnet build
+    dotnet run --load-data
+
+    ```
+
+1. Close the integrated terminal.
+
 ## Exercise 1: Measure performance cost when denormalizing data
 
 ### Task 1: Query for the product category name
@@ -194,6 +230,8 @@ Add code to handle the changes that are passed into the delegate, loop through e
 1. At line 588, replace **{container to watch}** with `productCategory`.
 
 1. At line 589, replace **{container to update}** with `product`. When a product category name is updated, every product in that category needs to be updated with the new product category name.
+
+    ![image](media/DP-420-m8-17.png)
 
 1. Below the *container to watch* and *container to update* lines, review the *leaseContainer* line. The leaseContainer works like a checkpoint on the container. It knows what has been updated since the last time it was checked by the change feed processor.
   
