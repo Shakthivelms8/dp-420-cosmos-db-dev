@@ -25,7 +25,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB for NoSQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | ---: | :--- |
