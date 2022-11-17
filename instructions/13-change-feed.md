@@ -11,15 +11,15 @@ In this lab, you will use the change feed processor functionality in the .NET SD
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
-1. Start **Visual Studio Code**.
+1. Start Visual Studio Code (the program icon is pinned to the Desktop).
 
-    > &#128221; If you are not already familiar with the Visual Studio Code interface, review the [Get Started guide for Visual Studio Code][code.visualstudio.com/docs/getstarted]
+1. Select the **Extension (1)** icon from the left pane. Enter **C# (2)** in the search bar and select the **extension (3)** that shows up and finally **Install (4)** on the extension. 
 
-1.  Start Visual Studio Code (the program icon is pinned to the Desktop).
+    ![](media/C-hash-extension.png)
 
-2.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
+1.  Open a file, From the top-left options, Click on **file->Open Folder** and navigate to **C:\AllFiles**.
 
-3.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
+1.  Select the folder **dp-420-cosmos-db-dev-stage** and Click on **Select Folder**.
 
 ### Task 2: Create an Azure Cosmos DB SQL API account
 
@@ -29,7 +29,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -40,6 +46,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Capacity mode** | *Serverless* |
 
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
