@@ -14,12 +14,18 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | ---: | :--- |
-    | **Subscription** | *DP-420-DeploymentID* |
-    | **Resource group** | *Select an existing or create a new resource group* |
+    | **Subscription** | *Your existing Azure subscription* |
+    | **Resource group** | *DP-420-DeploymentID* |
     | **Account Name** | *Enter a globally unique name* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
@@ -27,13 +33,14 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Global Distribution** TAB | Disable Multi-region Writes |
 
     >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
-
-
-    > &#128221; Note that you can enabled **Continuous** mode during the creation of the Azure Cosmos DB account, by selecting it under the **Backup Policy** tab. In this Lab you have the choice of enabling this feature during account creation or after the account is created in the optional section below. **Enabling the feature *after* the account is created *could take longer than 5 minutes*.**
-
+    
+    >&#128221; Note that you can enabled **Continuous** mode during the creation of the Azure Cosmos DB account, by selecting it under the **Backup Policy** tab. In this Lab you have the choice of enabling this feature during account creation or after the account is created in the optional section below. **Enabling the feature *after* the account is created *could take longer than 5 minutes*.**
+    
     > &#128221; Note that *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*.
-
+    
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 ### Task 2: Add a database and two containers to the account
 
@@ -46,7 +53,7 @@ Let's create a database and a couple of containers.
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Database id** | *`Sales`* |
-    | **Share throughput across containers** | *Do not select* |
+    | **Provision throughput** | *Do not select* |
 
 1. Under **Data Explorer**, add a new container with the following settings
 
