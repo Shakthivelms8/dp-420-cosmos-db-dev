@@ -14,7 +14,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -26,6 +32,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 
     >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -263,7 +271,7 @@ Now, you will need to create a composite index if you sort your items using mult
 
 1. Select **Execute Query**.
 
-1. Observe the results and stats of the query. The request unit charge is higher again because of the complexity of the query and the lack of a supporting composite index.
+1. The query should fail with the error **The order by query does not have a corresponding composite index that it can be served from**.
 
 1. In the **Data Explorer**, expand the **cosmicworks** database node, expand the **products** container node, and then select **Settings** again.
 

@@ -18,7 +18,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 
     > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
 
-1. In the **Select API option** pane, select the **Create** option within the **Core (SQL) - Recommended** section.
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
@@ -74,7 +74,7 @@ Now, we are going to create a provisioned throughput account with more tradition
 
     > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
 
-1. In the **Select API option** pane, select the **Create** option within the **Core (SQL) - Recommended** section.
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
 
 1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
@@ -84,11 +84,13 @@ Now, we are going to create a provisioned throughput account with more tradition
     | --: | :-- |
     | **Subscription** | *Your existing Azure subscription* |
     | **Resource Group** | *Select an existing resource group.* |
-    | **Account Name** | *Enter a globally unique name* |
+    | **Account Name** | *cosmosdb420-XXXXXX* |
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Select provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
     | **Limit the total amount of throughput that can be provisioned on this account** | *Unchecked* |
+    
+    >**Note**: Replace XXXXXX with the DeplymentID value provided in the environment details page.
 
 1. Select **Review + Create** to navigate to the **Review + Create** tab, and then select **Create**.
 
@@ -152,3 +154,11 @@ Now, we are going to create a provisioned throughput account with more tradition
     | **RU/s** | *`1000`* |
 
 1. Back in the **Data Explorer** pane, expand the **manualthroughputdb** database node and then observe the **childcontainer** container node within the hierarchy.
+
+1. Go to the newly created **Azure Cosmos DB** account resource and navigate to the **Keys** pane.
+
+1. This pane contains the connection details and credentials necessary to connect to the account from the SDK. Specifically:
+
+    1. Record the value of the **URI** field. You will use this **endpoint** value later in this exercise.
+
+    1. Record the value of the **PRIMARY KEY** field. You will use this **key** value later in this exercise.

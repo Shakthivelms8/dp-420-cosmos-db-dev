@@ -112,7 +112,7 @@ The **Microsoft.DocumentDB** resource provider in Azure Resource Manager makes i
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **dp-420**, the command will be **$resourceGroup="dp-420"**.
+    > **Note** For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$resourceGroup** variable to the terminal output using the following command:
 
@@ -233,9 +233,9 @@ Once your Azure Cosmos DB SQL API resources are deployed, you can navigate to th
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NOSQL API** navigation tree.
 
-1. Select the **products** container node within the **SQL API** navigation tree, and then select **Scale & Settings**.
+1. Select the **products** container node within the **NOSQL API** navigation tree, and then select **Scale & Settings**.
 
 1. Observe the values within the **Scale** section. Specifically, observe that the **Manual** option is selected in the **Throughput** section and that the provisioned throughput is set to **400** RU/s.
 
@@ -292,7 +292,7 @@ Bicep is an efficient domain-specific language that makes it simpler and easier 
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **dp420**, the command will be **$resourceGroup="dp420"**.
+    > **Note** For example, if your resource group is named **DP-420-xxxxxx**, the command will be **$resourceGroup="DP-420-xxxxxx"**.
 
 1. Deploy the Bicep template using the **az deployment group create** command:
 
@@ -406,9 +406,9 @@ Bicep deployments can be validated using many of the same techniques as Azure Re
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NOSQL API** navigation tree.
 
-1. Select the **products** container node within the **SQL API** navigation tree, and then select **Scale & Settings**.
+1. Select the **products** container node within the **NOSQL API** navigation tree, and then select **Scale & Settings**.
 
 1. Observe the values within the **Scale** section. Specifically, observe that the **Manual** option is selected in the **Throughput** section and that the provisioned throughput is set to **400** RU/s.
 

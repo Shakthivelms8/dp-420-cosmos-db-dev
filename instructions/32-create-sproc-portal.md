@@ -14,7 +14,13 @@ Stored procedures are authored in language-integrated JavaScript and support exe
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab.
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -24,6 +30,8 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     | **Location** | *Choose any available region* |
     | **Capacity mode** | *Provisioned throughput* |
     | **Apply Free Tier Discount** | *Do Not Apply* |
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -40,7 +48,7 @@ Stored procedures are authored in language-integrated JavaScript and support exe
     | **Indexing** | *Automatic* |
     | **Partition key** | */categoryId* |
 
-1. Still within the **Data Explorer**, expand the **cosmicworks** database node, then select the new **products** container node within the **SQL API** navigation tree.
+1. Still within the **Data Explorer**, expand the **cosmicworks** database node, then select the new **products** container node within the **NOSQL API** navigation tree.
 
 1. Select the **"..." (1)** followed by **New Stored Procedure (2)** and finally select **New Stored Procedure (3)** again.
 
@@ -215,7 +223,7 @@ While the stored procedure authored earlier in this lab has basic functionality,
 
 To wrap up things, you will use the Data Explorer to issue a SQL query that will return the two documents created in this lab.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then select the **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then select the **products** container node within the **NOSQL API** navigation tree.
 
 1. Select **New SQL Query**.
 
@@ -231,6 +239,6 @@ To wrap up things, you will use the Data Explorer to issue a SQL query that will
 
 1. Observe the two documents you created in this lab as the results of executing this query.
 
-1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and delete.
+1. Now back on the **Data Explorer**, select **"..."** next to **cosmicworks** database and select **Delete Database**. On the window that pops up, enter the **cosmicworks** and click on **OK**.
 
     ![](media/delete-database-1.png)

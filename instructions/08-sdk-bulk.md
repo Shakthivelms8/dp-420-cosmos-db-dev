@@ -30,15 +30,9 @@ In this lab, you'll use the [Bogus][nuget.org/packages/bogus/33.1.1] library fro
 
 1. Still **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, select **New Container**, and then create a new container with the following settings, leaving all remaining settings to their default values:
+1. Select the **Scale & Settings** node. In the Scale & Settings tab, set **Throughput** to **Autoscale** Save your changes.
 
-    | **Setting** | **Value** |
-    | ---: | :--- |
-    | **Database id** | *Create new* &vert; *`cosmicworks`* |
-    | **Share throughput across containers** | *Do not select* |
-    | **Container id** | *`products`* |
-    | **Partition key** | *`/categoryId`* |
-    | **Container throughput** | *Autoscale* &vert; *`4000`* |
+1. Update the required Max RU/s **4000** and then Save your changes**. 
 
 1. Close your web browser window or tab.
 

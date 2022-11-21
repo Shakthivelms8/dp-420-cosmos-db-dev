@@ -63,9 +63,11 @@ Before continuing with this exercise, you must first create a new Azure Cognitiv
 
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
 
+1. Click on **Review + Create** and after validation get Success click on **Create**.
+
 1. Wait for the deployment task to complete before continuing with this task.
 
-1. Go to the newly created **Azure Cognitive Search** account resource.
+1. Go to the newly created **Azure Cognitive Search** account resource. Click on **Go to resource**
 
 ### Task 2: Build indexer and index for Azure Cosmos DB SQL API data
 
@@ -105,9 +107,9 @@ You will create an indexer that indexes a subset of data in a specific Azure Cos
 
     > &#128221; This checkbox lets Azure Cognitive Search know that the query sorts results by the **_ts** field. This type of sorting enables incremental progress tracking. If the indexer fails, it can pick right back up form the same **_ts** value since the results are ordered by the timestamp.
 
-1. Select **Next: Add cognitive skills**.
+1. Select **Next: Add cognitive skills (Optional)**.
 
-1. Select **Next: Customize target index**.
+1. Select **Skip to: Customize target index**.
 
 1. In the **Customize target index** step of the wizard, configure the index with the following settings, leaving all remaining settings to their default values:
 

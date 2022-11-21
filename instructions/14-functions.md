@@ -25,8 +25,6 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 1. Select **Data Explorer** from the menu.
    > Note: Delete the **productslease**, which is already created in previous lab( click on **...** and select delete container).
 
-1. In the **Data Explorer** pane, expand **New Container** and then select **New Database**.
-
 1. In the **Data Explorer** pane, select **New Container** again.
 
 1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
@@ -60,7 +58,7 @@ Before you can begin writing code, you will need to create the Azure Functions r
 
     > &#128221; **To create new storage account** select **Hosting** tab click on **create new** and enter name as **storage[DID]**.
 
-1. Select **Review+create**.
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -81,6 +79,8 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Collection name for leases** | *productslease* |
     | **Create lease collection if it does not exist** | *No* |
 
+1. click on **Create**.
+
 ### Task 3: Create an Log Analytics workspaces.
 Before you can begin writing code, you will need to create the Log Analytics workspaces using the creation wizard.
 
@@ -93,7 +93,7 @@ Before you can begin writing code, you will need to create the Log Analytics wor
     | **Name** | *Enter a globally unique name* |
     | **Region** | *Choose same region* |
     
-1. Select **Review+create**.
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
     
@@ -111,7 +111,7 @@ you will need to create the Application Insights using the creation wizard.
     | **Resource Mode** | *workspace-based* |
     | **Log Analytics worksapces** | *Select an existing* |
     
-1. Select **Review+create**.
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 

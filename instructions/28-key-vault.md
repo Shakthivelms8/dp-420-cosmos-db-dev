@@ -27,7 +27,13 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Sign into the portal using the Microsoft credentials associated with your subscription.
 
-1. Select **+ Create a resource**, search for *Cosmos DB*, and then create a new **Azure Cosmos DB SQL API** account resource with the following settings, leaving all remaining settings to their default values:
+1. Within the **Azure services** category, select **Create a resource**, and then select **Azure Cosmos DB**.
+
+    > &#128161; Alternatively; expand the **&#8801;** menu, select **All Services**, in the **Databases** category, select **Azure Cosmos DB**, and then select **Create**.
+
+1. In the **Select API option** pane, select the **Create** option within the **Azure Cosmos DB for NoSQL** section.
+
+1. Within the **Create Azure Cosmos DB Account** pane, observe the **Basics** tab
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -39,6 +45,8 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     | **Apply Free Tier Discount** | *Do Not Apply* |
 
     >**Note** : DeploymentID is the a unique id associated to each environment. You can find the value inside the environment details page.
+
+1. Click on **Review + Create** and after validation get Success click on **Create**.
 
 1. Wait for the deployment task to complete before continuing with this task.
 
@@ -63,6 +71,8 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
     | **Key vault name** | *Enter a globally unique name* |
     | **Region** | *Choose any available region* |
 
+1. Click on **Review + Create** and after validation get Success click on **Create**.
+
 1. Once the vault is created, navigate to the vault.
 
 1. Under the *Settings* section, select **Secrets**.
@@ -75,7 +85,9 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
     | **Name** | *The name you will label your secret with* |
     | **Value** | *This field is the most important field to fill out. This value is the PRIMARY CONNECTION STRING you previously copied from the key section of your Azure Cosmos DB account. This value will be convert into a secret.* |
     | **Enabled** | *Yes* |
- 
+
+1. click on **Create**
+
 1. Under the Secrets, you should now see your new secret listed. We need to get the *secret identifier* that we will add to the code of our webapp. Select the **secret** you created.
 
 1. Azure Key Vault allows you to create multiple versions of your secret, but for this lab, we only need one version. Select the **Current version**.
@@ -85,8 +97,6 @@ Before we create our web app, we will secure the Azure Cosmos DB account connect
 ## Create an Azure App Service webapp
 
 We'll create a webapp that will connect to the Azure Cosmos DB account and create some containers and documents. We won't hard code the Azure Cosmos DB *credentials* in this app, but instead, hard code the **Secret Identifier** from the key vault. We'll see how this identifier is useless without the proper rights assigned to the webapp on the Azure layer. Let's start coding.
-
-
 
 1. Open **Visual Studio Code**.  Open the **28-key-vault** folder, by selecting File->Open folder, and browsing all the way into the **28-key-vault** folder.
 
@@ -101,7 +111,6 @@ We'll create a webapp that will connect to the Azure Cosmos DB account and creat
     ```
     dotnet new mvc
     ```
-
 
 1. That command created the shell of a web app, so it added several files and directories. We already have a couple of files with all the code we need. Replace the files **.\Controllers\HomeController.cs** and **.\Views\Home\Index.cshtml** for their respective files in the **.\KeyvaultFiles** directory.
 
@@ -201,8 +210,10 @@ The rest of the code is straight forward, get the connection string, connect to 
 
 > &#128221; Most of the steps below will be run in the command pallet in the upper middle of your Visual Studio screen.
 
-1. In Visual Studio Code, open the command pallet, search for ***Azure App Service: Create New Web App ... (Advanced)***
+1. In Visual Studio Code, from the left side pannel click on **Azure(shift+alt+a)**, right click on ***App Service*** and select the ***Create New Web App ... (Advanced)***
 
+    ![Screenshot of App Service.](media/DP-420-M11-lab4-appservice.png)
+    
 1. Select ***Sign-in to Azure...***. This option will open a web browser window, follow the sign-in process, and close the browser when done.
 
 1. (Optional) If it asks for your subscription select your subscription.
@@ -265,7 +276,7 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
 
 1. Under the *Settings* section, select **Access policies**.
 
-1. Select **+ Add Access Policy**.
+1. Select **+ Create**.
 
 1. Fill in the *Access policy* values with the following settings, *leaving all remaining settings to their default values*, then select to add the policy:
 
@@ -273,18 +284,20 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
     | ---: | :--- |
     | **Key permissions** | *Get* |
     | **Secret permissions** | *Get* |
-    | **Select principal** | *Search and select your application name* |
-
+  
     > &#128221; Don't select an Authorized application.
 
-1. **Save** the new policy.
+1. Click on **Next** in **principal** blade **Search and select your application name**, click **Next** 
+    
+1. In **Application (optional)** blade leave it as default and click on **Next**. 
+    
+1. **Create** the new policy.
 
 1. Let's try our web app again.  On your browser, go to  **`https://<yourwebappname>.azurewebsites.net`**.
 
 1. Success! Our web page should indicate that we inserted new items into the customer container. We can also see the actual Secret being displayed.
 
     > &#128221; In a production environment **never** display the secret, this was just done for illustration purposes.
-
 
 1. Go to your Azure Cosmos DB account and verify that you either have a new **GlobalCustomers** database with data in it, or if the database already existed, if there are now more items in the database.
 
