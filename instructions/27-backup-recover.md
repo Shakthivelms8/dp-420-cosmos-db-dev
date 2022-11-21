@@ -39,6 +39,10 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
     > &#128221; Note that *[Multi-regions write accounts are not currently supported for continuous backups][/azure/cosmos-db/continuous-backup-restore-introduction]*.
     
     > &#128221; Your lab environments may have restrictions preventing you from creating a new resource group. If that is the case, use the existing pre-created resource group.
+   
+1. Click on **Next: Networking**, in Networking blade leave it default. Click on **Next: Backup Policy**.
+
+1. In Backup Policy blade select Backup policy to **Continuous (7 days)**.
 
 1. Click on **Review + Create** and after validation get Success click on **Create**.
 
@@ -48,14 +52,18 @@ Let's create a database and a couple of containers.
 
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
-1. Under **Data Explorer**, add a new database with the following settings
+1. In the **Data Explorer** pane, expand **New Container** and then select **New Database**.
+
+1. In the **New Database** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
     | ---: | :--- |
     | **Database id** | *`Sales`* |
     | **Provision throughput** | *Do not select* |
 
-1. Under **Data Explorer**, add a new container with the following settings
+1. In the **Data Explorer** pane, select **New Container**.
+
+1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -64,7 +72,9 @@ Let's create a database and a couple of containers.
     | **Partition key** | *`/id`* |
     | **Container throughput (400 - unlimited RU/s)** | *Manual* throughput: *400*|
 
-1. Under **Data Explorer**, add a new container with the following settings
+1. In the **Data Explorer** pane, select **New Container**.
+
+1. In the **New Container** popup, enter the following values for each setting, and then select **OK**:
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -80,6 +90,8 @@ Let's add some documents to those containers.
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
 1. Under **Data Explorer**, add the following two documents to the **customer** container.
+
+1. Under **customer** container. Select **Items**, click on **New Items**, and click on **Save**.
 
 ```
   {
@@ -106,6 +118,8 @@ Let's add some documents to those containers.
     }
   }
 ```
+
+1. Select **Items**, click on **New Items**, and click on **Save**.
 
 ```
   {
@@ -134,6 +148,8 @@ Let's add some documents to those containers.
 ```
 1. Under **Data Explorer**, add the following three documents to the **salesOrder** container.
 
+1. Select **Items**, click on **New Items**, and click on **Save**.
+
 ```
   {
     "id": "000C23D8-B8BC-432E-9213-6473DFDA2BC5",
@@ -157,6 +173,8 @@ Let's add some documents to those containers.
   }
   ```
 
+1. Select **Items**, click on **New Items**, and click on **Save**.
+
   ```
   {
     "id": "001676F7-0B70-400B-9B7D-24BA37B97F70",
@@ -179,6 +197,8 @@ Let's add some documents to those containers.
     ]
   }
   ```
+
+1. Select **Items**, click on **New Items**, and click on **Save**.
 
   ```
   {
@@ -235,7 +255,7 @@ Let's add some documents to those containers.
 
 1. On the Azure portal, navigate to your Azure Cosmos DB account page.
 
-1. Under the *Settings* section, select **Point in Time Restore**. Use the following settings:
+1. Under the *Settings* section, select **Point in Time Restore**. Use the following settings, then click on **Submit**.
 
     | **Setting** | **Value** |
     | ---: | :--- |
@@ -243,6 +263,7 @@ Let's add some documents to those containers.
     | **Location** | *Selected an available location* |
     | **Select resources you would like to restore** | *Selected database/containers* |
     | **Restore Resource** | *salesOrder* |
+    | **Resource Group** | _DP-420-DeploymentID_|
     | **Restore Target Account** | *choose a* ***new*** *Azure Cosmos DB account name* |
 
     > &#128221; For Azure Cosmos DB restores, you ***never*** restore on top of and *existing* account, and will always have to create a new Azure Cosmos DB account.
