@@ -76,7 +76,7 @@ The **cosmosdb** command group contains basic commands to create and manage Azur
     $resourceGroup="<resource-group-name>"
     ```
 
-    > **Note** For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="dp420-xxxxx"**.
+    > **Note** For example, if your resource group is named **DP-420-xxxxx**, the command will be **$resourceGroup="DP-420-xxxxx"**.
 
 1. Use the **echo** cmdlet to write the value of the **$accountName** and **$resourceGroup** variables to the terminal output using the following command:
 
