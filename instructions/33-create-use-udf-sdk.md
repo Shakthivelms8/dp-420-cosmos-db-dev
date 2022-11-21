@@ -69,6 +69,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
     > ``cosmicworks --endpoint https://dp420.documents.azure.com:443/ --key fDR2ci9QgkdkvERTQ== --datasets product``
 
 1. Wait for the **cosmicworks** command to finish populating the account with a database, container, and items.
+   > Note: If your getting error, close the visual studio code and reopen it and try to run the command once again.
 
 1. Close the integrated terminal.
 
@@ -190,9 +191,9 @@ Now that a new UDF has been created in the Azure Cosmos DB container, you will u
 
 1. Within the **Azure Cosmos DB** account resource, navigate to the **Data Explorer** pane.
 
-1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **SQL API** navigation tree.
+1. In the **Data Explorer**, expand the **cosmicworks** database node, then observe the new **products** container node within the **NOSQL API** navigation tree.
 
-1. Select the **products** container node within the **SQL API** navigation tree, and then select **New SQL Query**.
+1. Select the **products** container node within the **NOSQL API** navigation tree, and then select **New SQL Query**.
 
 1. In the query tab, select **Execute Query** to view a standard query that selects all items without any filters.
 
