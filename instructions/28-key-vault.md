@@ -210,8 +210,10 @@ The rest of the code is straight forward, get the connection string, connect to 
 
 > &#128221; Most of the steps below will be run in the command pallet in the upper middle of your Visual Studio screen.
 
-1. In Visual Studio Code, open the command pallet, search for ***Azure App Service: Create New Web App ... (Advanced)***
+1. In Visual Studio Code, from the left side pannel click on **Azure(shift+alt+a)**, right click on ***App Service*** and select the ***Create New Web App ... (Advanced)***
 
+    ![Screenshot of App Service.](media/DP-420-M11-lab4-appservice.png)
+    
 1. Select ***Sign-in to Azure...***. This option will open a web browser window, follow the sign-in process, and close the browser when done.
 
 1. (Optional) If it asks for your subscription select your subscription.
@@ -274,7 +276,7 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
 
 1. Under the *Settings* section, select **Access policies**.
 
-1. Select **+ Add Access Policy**.
+1. Select **+ Create**.
 
 1. Fill in the *Access policy* values with the following settings, *leaving all remaining settings to their default values*, then select to add the policy:
 
@@ -282,18 +284,20 @@ The original goal of this lab was to prevent our Azure Cosmos DB Accounts from b
     | ---: | :--- |
     | **Key permissions** | *Get* |
     | **Secret permissions** | *Get* |
-    | **Select principal** | *Search and select your application name* |
-
+  
     > &#128221; Don't select an Authorized application.
 
-1. **Save** the new policy.
+1. Click on **Next** in **principal** blade **Search and select your application name**, click **Next** 
+    
+1. In **Application (optional)** blade leave it as default and click on **Next**. 
+    
+1. **Create** the new policy.
 
 1. Let's try our web app again.  On your browser, go to  **`https://<yourwebappname>.azurewebsites.net`**.
 
 1. Success! Our web page should indicate that we inserted new items into the customer container. We can also see the actual Secret being displayed.
 
     > &#128221; In a production environment **never** display the secret, this was just done for illustration purposes.
-
 
 1. Go to your Azure Cosmos DB account and verify that you either have a new **GlobalCustomers** database with data in it, or if the database already existed, if there are now more items in the database.
 
