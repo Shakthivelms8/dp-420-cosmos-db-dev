@@ -1,5 +1,7 @@
 # Module 4 - Implement Azure Cosmos DB SQL API point operations
 
+### Estimated Timing: 60 minutes
+
 ## Lab 1 :  Create and update documents with the Azure Cosmos DB SQL API SDK
 
 The [Microsoft.Azure.Cosmos.Container][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.container] class includes a set of member methods to create, retrieve, update, and delete items within an Azure Cosmos DB SQL API container. Together, these methods perform some of the most common “CRUD” operations across various items within SQL API containers.
