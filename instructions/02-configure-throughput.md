@@ -1,5 +1,7 @@
 # Module 2 - Plan and implement Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1: Configure throughput for Azure Cosmos DB SQL API with the Azure portal
 
 One of the most important things to wrap your head around is configuring throughput in Azure Cosmos DB SQL API. To create an Azure Cosmos DB SQL API container, you must first create an account and then a database; in that order.
