@@ -1,5 +1,7 @@
 # Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
 
+### Estimated Timing: 30 minutes
+
 ## Lab 2: Process Azure Cosmos DB SQL API data using Azure Functions
 
 The Azure Cosmos DB trigger for Azure Functions is implemented using a change feed processor. You can create functions that respond to create and update operations in your Azure Cosmos DB SQL API container with this knowledge. If you have implemented a change feed processor manually, the setup for Azure Functions is similar.
