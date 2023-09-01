@@ -1,5 +1,7 @@
 # Module 4 - Implement Azure Cosmos DB SQL API point operations
 
+### Estimated Timing: 30 minutes
+
 ## Lab 3 :  Move multiple documents in bulk with the Azure Cosmos DB SQL API SDK
 
 The easiest way to learn how to perform a bulk operation is to attempt to push many documents to an Azure Cosmos DB SQL API account in the cloud. Using the bulk features of the SDK, this can be done with some minor help from the [System.Threading.Tasks][docs.microsoft.com/dotnet/api/system.threading.tasks] namespace.
