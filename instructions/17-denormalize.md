@@ -1,5 +1,7 @@
 # Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Lab 2: Cost of denormalizing data and aggregates and using the change feed for referential integrity
 
 Using the Relational model could allow us to place different entities in their own containers.  However in NoSQL databases there are no *joins* between containers so we need to start denormalizing our data to eliminate the use of *joins*. Additionally, NoSQL reduces the number of request by modeling the data so the applications can fetch their data in as fewer requests as possible. One problem that rises when denormalizing our data could be the referential integrity between our entities, for this we can use the change feed to keep the data in sync. Denormalizing your aggregates like group by counts can also help us reduce requests.  
