@@ -1,5 +1,7 @@
 # Module 6 - Define and implement an indexing strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Lab 2 :  Configure an Azure Cosmos DB SQL API container's index policy with the portal
 
 Indexing policies can be managed from any of the Azure Cosmos DB SDKs. The .NET SDK specifically includes a set of classes that can be used to architect and push a new indexing policy to a container in Azure Cosmos DB SQL API.
