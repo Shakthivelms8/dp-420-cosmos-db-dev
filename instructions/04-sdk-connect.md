@@ -1,5 +1,7 @@
 # Module 3 - Connect to Azure Cosmos DB SQL API with the SDK
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1 :  Connect to Azure Cosmos DB SQL API with the SDK
 
 The Azure SDK for .NET is a suite of libraries that provides a consistent developer interface to interact with many Azure services. The Azure SDK for .NET is built to the .NET Standard 2.0 specification ensuring that it can be used in .NET Framework (4.6.1 or above), .NET Core (2.1 or above), and .NET (5 or above) applications.
