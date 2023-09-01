@@ -1,5 +1,7 @@
 # Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 60 minutes
+
 ## Lab 3: Connect to a multi-region write account with the Azure Cosmos DB SQL API SDK
 
 The **CosmosClientBuilder** class is a fluent class designed to build the SDK client to connect to your container and perform operations. Using the builder, you can configure a preferred application region for write operations if your Azure Cosmos DB SQL API account is already configured for multi-region writes.
