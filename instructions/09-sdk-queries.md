@@ -1,5 +1,7 @@
 # Module 5 - Execute queries in Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1 :  Execute a query with the Azure Cosmos DB SQL API SDK
 
 The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easier than ever to query a container and asynchronously iterate over result sets using the latest best practices and language features from C#.
