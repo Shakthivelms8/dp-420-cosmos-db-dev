@@ -1,5 +1,7 @@
 # Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 60 minutes
+
 ## Lab 2: Configure consistency models in the portal and the Azure Cosmos DB SQL API SDK
 
 The default consistency level for new Azure Cosmos DB SQL API accounts is session consistency. This default setting can be modified for all future requests. At an individual request level, you can go a step further and relax the consistency level for that specific request.
