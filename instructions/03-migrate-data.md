@@ -1,5 +1,7 @@
 # Module 2 - Plan and implement Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Migrate existing data using Azure Data Factory
 
 In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest and as a target (sink) of data output.
