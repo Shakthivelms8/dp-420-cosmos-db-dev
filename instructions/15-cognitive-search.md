@@ -1,5 +1,7 @@
 # Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
 
+### Estimated Timing: 30 minutes
+
 ## Lab 3: Search data using Azure Cognitive Search and Azure Cosmos DB SQL API
 
 Azure Cognitive Search combines a search engine as a service with deep integration with AI capabilities to enrich the information in the search index.
