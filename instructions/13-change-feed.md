@@ -1,6 +1,8 @@
 
 # Module 7 - Integrate Azure Cosmos DB SQL API with Azure services
 
+### Estimated Timing: 60 minutes
+
 ## Lab 1: Process change feed events using the Azure Cosmos DB SQL API SDK
 
 The Azure Cosmos DB SQL API change feed is the key to creating supplemental applications driven by events from the platform. The .NET SDK for the Azure Cosmos DB SQL API ships with a suite of classes to build your applications that integrate with the change feed and listen for notifications about operations within your containers.
