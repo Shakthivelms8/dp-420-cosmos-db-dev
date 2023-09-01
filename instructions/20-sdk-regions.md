@@ -1,5 +1,7 @@
 # Module 9 - Design and implement a replication strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 60 minutes
+
 ## Lab 1: Connect to different regions with the Azure Cosmos DB SQL API SDK
 
 When you enable geo-redundancy for an Azure Cosmos DB SQL API account, you can then use the SDK to read data from regions in any order you configure. This technique is beneficial when you distribute your read requests across all of your available read regions.
