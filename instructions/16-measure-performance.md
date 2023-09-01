@@ -1,5 +1,7 @@
 # Module 8 - Implement a data modeling and partitioning strategy for Azure Cosmos DB SQL API
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1: Measure performance of entities in separate and embeded containers
 
 In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
