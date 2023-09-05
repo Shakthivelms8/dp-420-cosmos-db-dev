@@ -1,6 +1,8 @@
 
 # Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
+### Estimated Timing: 30 minutes
+
 ## Lab 4: Store Azure Cosmos DB SQL API account keys in Azure Key Vault
 
 Adding an Azure Cosmos DB account connection code to your application is as simple as providing the account's URI and keys. This security information might sometimes be hard-coded into the application code. However, if your application is being deployed to the Azure App Service, you can save the encrypt connection information into Azure Key Vault.
