@@ -1,5 +1,7 @@
 # Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
+### Estimated Timing: 60 minutes
+
 ## Lab 2: Optimize an Azure Cosmos DB SQL API container's indexing policy for a query
 
 When planning for an Azure Cosmos DB SQL API account, knowing our most popular queries can help us tune the indexing policy so that queries are as performant as possible.
