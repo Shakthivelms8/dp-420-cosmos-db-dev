@@ -1,5 +1,7 @@
 # Module 13: Create server-side programming constructs in Azure Cosmos DB SQL API'
 
+### Estimated Timing: 30 minutes
+
 ## Lab 2: Implement and then use a UDF using the SDK
 
 The .NET SDK for Azure Cosmos DB SQL API can be used to manage and invoke server-side programming constructs directly from a container. When preparing a new container, it may make sense to use the .NET SDK to publish UDFs directly to a container instead of performing the tasks manually using the Data Explorer.
