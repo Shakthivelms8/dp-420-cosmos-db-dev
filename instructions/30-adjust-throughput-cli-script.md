@@ -1,5 +1,7 @@
 # Module 12: Manage an Azure Cosmos DB SQL API solution using DevOps practices
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1: Adjust provisioned throughput using an Azure CLI script
 
 The Azure CLI is a set of commands that you can use to manage various resources across Azure. Azure Cosmos DB has a rich command group that can be used to manage various facets of an Azure Cosmos DB account regardless of the selected API.
