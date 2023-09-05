@@ -1,5 +1,7 @@
 # Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
+### Estimated Timing: 30 minutes
+
 ## Lab 3: Recover a database or container from a recovery point 
 
 Azure Automatically takes encrypted backups of your data. These backups are taken in two modes, **Periodic** and **Continuous** backup modes.
