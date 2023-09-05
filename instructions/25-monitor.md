@@ -1,6 +1,8 @@
 
 # Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
+### Estimated Timing: 30 minutes
+
 ## Lab 1: Use Azure Monitor to analyze an Azure Cosmos DB SQL API account
 
 Azure Monitor is a full stack monitoring service in Azure that provides a complete set of features to monitor Azure resources.  Azure Cosmos DB creates monitoring data using Azure Monitor.  Azure Monitor captures Cosmos DB's metrics and telemetry data.
