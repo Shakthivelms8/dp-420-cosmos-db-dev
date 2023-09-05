@@ -1,6 +1,8 @@
 
 # Module 11: Monitor and troubleshoot an Azure Cosmos DB SQL API solution
 
+### Estimated Timing: 30 minutes
+
 ## Lab 2: Troubleshoot an application using the Azure Cosmos DB SQL API SDK
 
 Azure Cosmos DB offers an extensive set of response codes, which help us easily troubleshoot issues that could arise with our different operation types. The catch is to make sure we program proper error handling when creating apps for Azure Cosmos DB.
