@@ -1,5 +1,7 @@
 # Module 10 - Optimize query performance in Azure Cosmos DB SQL API
 
+### Estimated Timing: 60 minutes
+
 ## Lab 1: Optimize an Azure Cosmos DB SQL API container's indexing policy for write operations
 
 For write-heavy workloads or workloads with large JSON objects, it can be advantageous to optimize the indexing policy to only index properties that you know you will want to use in your queries.
