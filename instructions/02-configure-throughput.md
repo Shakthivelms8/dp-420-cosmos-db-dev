@@ -10,7 +10,7 @@ One of the most important things to wrap your head around is configuring through
 
 In this lab, you will provision throughput using various methods in the Data Explorer. You will provision throughput either manually or using autoscale, at the database and the container level.
 
-## Create a serverless account
+## Task 01: Create a serverless account
 
 Let’s start simple by creating a serverless account. There’s not much to configure here since everything is serverless. When we create our database and container, we don’t have to provision throughput at all. You will see all of that as we step into creating this account.
 
@@ -70,7 +70,7 @@ Let’s start simple by creating a serverless account. There’s not much to con
 
 1. Return to the **Home** of the Azure portal.
 
-## Create a provisioned account
+## Task 02: Create a provisioned account
 
 Now, we are going to create a provisioned throughput account with more traditional configuration options. This type of account will open up a world of configuration options for us which can be a bit overwhelming. We are going to walk through a few examples of database and container pairings that are possible here.
 
