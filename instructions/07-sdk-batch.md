@@ -10,7 +10,7 @@ The [TransactionalBatch][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.tr
 
 In this lab, you’ll use the SDK, to perform two dual-item operations where you attempt to create two items as a single logical unit.
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -24,7 +24,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Create an Azure Cosmos DB SQL API account and configure the SDK project
+## Task 02: Create an Azure Cosmos DB SQL API account and configure the SDK project
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -97,7 +97,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Close the integrated terminal.
 
-## Creating a transactional batch
+## Task 03: Creating a transactional batch
 
 First, let’s create a simple transactional batch that makes two fictional products. This batch will insert a worn saddle and a rusty handlebar into the container with the same “used accessories” category identifier. Both items have the same logical partition key, ensuring that we will have a successful batch operation.
 
@@ -183,7 +183,7 @@ First, let’s create a simple transactional batch that makes two fictional prod
 
 1. Close the integrated terminal.
 
-## Creating an errant transactional batch
+## Task 04: Creating an errant transactional batch
 
 Now, let’s create a transactional batch that will error purposefully. This batch will attempt to insert two items that have different logical partition keys. We will create a flickering strobe light in the “used accessories” category and a new helmet in the “pristine accessories” category. By definition, this should be a bad request and return an error when performing this transaction.
 
