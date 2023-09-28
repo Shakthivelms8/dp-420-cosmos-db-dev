@@ -10,7 +10,7 @@ The easiest way to learn how to perform a bulk operation is to attempt to push m
 
 In this lab, you'll use the [Bogus][nuget.org/packages/bogus/33.1.1] library from NuGet to generate fictional data and place that into an Azure Cosmos DB account.
 
-## Prepare your development environment
+## Task 01 Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -24,7 +24,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Create an Azure Cosmos DB SQL API account and configure the SDK project
+## Task 02: Create an Azure Cosmos DB SQL API account and configure the SDK project
 
 1. In a new web browser window or tab, navigate to the Azure portal (``portal.azure.com``).
 
@@ -109,7 +109,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Close the integrated terminal.
 
-## Bulk inserting a twenty-five thousand documents
+## Task 03: Bulk inserting a twenty-five thousand documents
 
 Let's "go for the gusto" and try to insert a lot of documents to see how this works. In our internal testing, this can take approximately 1-2 minutes if the lab virtual machine and Azure Cosmos DB SQL API account are relatively close to each other geographically speaking.
 
@@ -243,7 +243,7 @@ Let's "go for the gusto" and try to insert a lot of documents to see how this wo
 
 1. Close **Visual Studio Code**.
 
-## Observe the results
+## Task 04: Observe the results
 
 Now that you have sent 25,000 items to Azure Cosmos DB let’s go and look at the Data Explorer.
 
