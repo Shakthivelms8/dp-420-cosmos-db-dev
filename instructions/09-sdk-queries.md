@@ -12,7 +12,7 @@ The latest version of the .NET SDK for the Azure Cosmos DB SQL API makes it easi
 
 In this lab, you'll use an asynchronous stream to iterate over a large result set returned from Azure Cosmos DB SQL API. You will use the .NET SDK to query and iterate over results.
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -26,7 +26,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Create an Azure Cosmos DB SQL API account
+## Task 02: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -59,7 +59,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Seed the Azure Cosmos DB SQL API account with data
+## Task 03 Seed the Azure Cosmos DB SQL API account with data
 
 The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys sample data to any Azure Cosmos DB SQL API account. The tool is open-source and available through NuGet. You will install this tool to the Azure Cloud Shell and then use it to seed your database.
 
@@ -92,7 +92,7 @@ The [cosmicworks][nuget.org/packages/cosmicworks] command-line tool deploys samp
 
 1. Close the integrated terminal.
 
-## Iterate over the results of a SQL query using the SDK
+## Task 04 Iterate over the results of a SQL query using the SDK
 
 You will now use an asynchronous stream to create a simple-to-understand foreach loop over paginated results from Azure Cosmos DB. Behind the scenes, the SDK will manage the feed iterator and making sure subsequent requests are invoked correctly.
 
