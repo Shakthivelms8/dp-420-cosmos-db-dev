@@ -10,7 +10,7 @@ In Azure Data Factory, Azure Cosmos DB is supported as a source of data ingest a
 
 In this lab, we will populate Azure Cosmos DB using a helpful command-line utility and then use Azure Data Factory to move a subset of data from one container to another.
 
-## Create and seed your Azure Cosmos DB SQL API account
+## Task 01 Create and seed your Azure Cosmos DB SQL API account
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container at **4,000** request units per second (RU/s). Once created, you will adjust the throughput down to 400 RU/s.
 
@@ -111,7 +111,7 @@ To accompany the products container, you will create a **flatproducts** containe
 
 1. Return to the **Home** of the Azure portal.
 
-## Create Azure Data Factory resource
+## Task 02: Create Azure Data Factory resource
 
 Now that the Azure Cosmos DB SQL API resources are in place, you will create an Azure Data Factory resource and configure all of the necessary components and connections to perform a one-time data movement from one SQL API container to another to extract data, transform it, and load it to another SQL API container.
 
