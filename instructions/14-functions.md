@@ -10,7 +10,7 @@ The Azure Cosmos DB trigger for Azure Functions is implemented using a change fe
 
 In this lab, you will
 
-## Create an Azure Cosmos DB SQL API account
+## Task 01: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -78,7 +78,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Return to the **Home** of the Azure portal.
 
-## Create an Azure Function app and Azure Cosmos DB-triggered function
+## Task 02: Create an Azure Function app and Azure Cosmos DB-triggered function
 
 Before you can begin writing code, you will need to create the Azure Functions resource and its dependent resources (Application Insights, Storage) using the creation wizard.
 
@@ -116,7 +116,7 @@ Before you can begin writing code, you will need to create the Azure Functions r
     | **Collection name for leases** | *productslease* |
     | **Create lease collection if it does not exist** | *No* |
 
-## Implement function code in .NET
+## Task 03: Implement function code in .NET
 
 The function you created earlier is a C# script that is edited in-portal. You will now use the portal to write a short function to output the unique identifier of any item inserted or updated in the container.
 
@@ -204,7 +204,7 @@ The function you created earlier is a C# script that is edited in-portal. You wi
 
     > &#128221; You will use another tool to generate items in your Azure Cosmos DB SQL API container. Once you generate the items, you will return to this browser window to observe the output. Do not close the browser window prematurely.
 
-## Seed your Azure Cosmos DB SQL API account with sample data
+## Task 4: Seed your Azure Cosmos DB SQL API account with sample data
 
 You will use a command-line utility that creates a **cosmicworks** database and a **products** container. The tool will then create a set of items that you will observe using the change feed processor running in your terminal window.
 
