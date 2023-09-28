@@ -10,7 +10,7 @@ Using the Relational model could allow us to place different entities in their o
 
 In this lab, you'll look at the benefits of how denormalizing data and aggregates can help us reduce cost and how we can use the change feed to mantain referential integrity on the denormalized data.
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -48,7 +48,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 ## Exercise 1: Measure performance cost when denormalizing data
 
-### Query for the product category name
+### Task 01: Query for the product category name
 
 In the **database-v2** container, where data is stored in individual containers, run a query to get the product category name, and then view the request charge for that query.
 
@@ -76,7 +76,7 @@ In the **database-v2** container, where data is stored in individual containers,
 
     ![Screenshot of the query stats for the query you ran in Data Explorer.](media/16-product-category-stats.png)
 
-### Query for the products in the category
+### Task 02: Query for the products in the category
 
 Next, query the product container to get all the products in the "Components, Headsets" category.
 
@@ -152,7 +152,7 @@ Last, run a query to return the tags for ML Headset.
 
     ![Screenshot of the results of our query to the product tag container for 'ML Headset' query stats.](media/16-product-tag-ml-stats.png)
 
-### Add up the RU charges
+### Task 03: Add up the RU charges
 
 Now, let's add up all the RU costs from each of the queries you ran.
 
