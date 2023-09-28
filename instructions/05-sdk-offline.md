@@ -10,7 +10,7 @@ The Azure Cosmos DB Emulator is a local tool that emulates the Azure Cosmos DB s
 
 In this lab, you'll connect to the Azure Cosmos DB Emulator from the Azure SDK for .NET.
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -24,7 +24,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Start the Azure Cosmos DB Emulator
+## Task 02: Start the Azure Cosmos DB Emulator
 
 Your environment should already have the emulator pre-installed. If not, refer to the [installation instructions][docs.microsoft.com/azure/cosmos-db/local-emulator] to install the Azure Cosmos DB Emulator. Once the emulator has started, you can retrieve the connection string and use it to connect to the emulator using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -48,7 +48,7 @@ Your environment should already have the emulator pre-installed. If not, refer t
 
 1. Close your web browser window or tab.
 
-## Connect to the emulator from the SDK
+## Task 03: Connect to the emulator from the SDK
 
 The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NET script you will use in this exercise. Further, some of the boilerplate code has already been written to save you time. You will need to update the boilerplate connection string value and write a couple of lines of code to complete the script.
 
@@ -112,7 +112,7 @@ The **Microsoft.Azure.Cosmos** library has already been pre-installed in the .NE
 
 1. Close the integrated terminal.
 
-## View the changes in the emulator
+## Task 04: View the changes in the emulator
 
 Now that you have created a new database in the Azure Cosmos DB emulator, you will use the online **Data Explorer** to observe the new SQL API database within the emulator.
 
@@ -124,7 +124,7 @@ Now that you have created a new database in the Azure Cosmos DB emulator, you wi
 
 1. Close your web browser window or tab.
 
-## Create and view a new container
+## Task 05: Create and view a new container
 
 Creating a new container is similar to the pattern used to create a new database. The code you learn here will be relevant whether or not you create resources in the cloud or in the emulator, you simply need to change the connection string. You will expand the script file further to create a new container along with the database.
 
@@ -183,7 +183,7 @@ Creating a new container is similar to the pattern used to create a new database
 
 1. Close your web browser window or tab.
 
-## Stop the Azure Cosmos DB Emulator
+## Task 06: Stop the Azure Cosmos DB Emulator
 
 It is important to stop the emulator when you are done using it as it can use system resources in your environment. You will use the system tray icon to stop the emulator and all running instances.
 
