@@ -10,7 +10,7 @@ Before diving too deeply into Azure Cosmos DB, it's important to get a handle on
 
 In this lab, you'll create a new Azure Cosmos DB account using the SQL API. You will then use the Data Explorer to create a database, a container, and two items. Finally, you will query the database for the items you created.
 
-## Create a new Azure Cosmos DB account
+## Task 01: Create a new Azure Cosmos DB account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**).
 
@@ -45,7 +45,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Still within the **Deployment** pane, select **Go to resource**.
 
-## Use the Data Explorer to create a new database and container
+## Task 02: Use the Data Explorer to create a new database and container
 
 The Data Explorer will be your primary tool to manage the Azure Cosmos DB SQL API database and containers in the Azure portal. You will create a basic database and container to use in this lab.
 
@@ -66,7 +66,7 @@ The Data Explorer will be your primary tool to manage the Azure Cosmos DB SQL AP
 
 1. Back in the **Data Explorer** pane, expand the **cosmicworks** database node and then observe the **products** container node within the hierarchy.
 
-## Use the Data Explorer to create new items
+## Task 03: Use the Data Explorer to create new items
 
 The Data Explorer also includes a suite of features to query, create, and manage items in an Azure Cosmos DB SQL API container. You will create two basic items using raw JSON in the Data Explorer.
 
@@ -102,7 +102,7 @@ The Data Explorer also includes a suite of features to query, create, and manage
 
 1. In the **Items** tab, observe the two new items in the **Items** pane.
 
-## Use the Data Explorer to issue a basic query
+## Task 4: Use the Data Explorer to issue a basic query
 
 Finally, the Data Explorer has a built-in query editor that is used to issue queries, observe the results, and measure impact in terms of request units per second (RU/s).
 
