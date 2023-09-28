@@ -10,7 +10,7 @@ Indexing policies can be managed from any of the Azure Cosmos DB SDKs. The .NET 
 
 In this lab, you'll create a custom indexing policy for a container using the .NET SDK
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -24,7 +24,7 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Once the repository has been cloned, open the local folder you selected in **Visual Studio Code**.
 
-## Create an Azure Cosmos DB SQL API account
+## Task 02: Create an Azure Cosmos DB SQL API account
 
 Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple APIs. When provisioning an Azure Cosmos DB account for the first time, you will select which of the APIs you want the account to support (for example, **Mongo API** or **SQL API**). Once the Azure Cosmos DB SQL API account is done provisioning, you can retrieve the endpoint and key and use them to connect to the Azure Cosmos DB SQL API account using the Azure SDK for .NET or any other SDK of your choice.
 
@@ -57,7 +57,7 @@ Azure Cosmos DB is a cloud-based NoSQL database service that supports multiple A
 
 1. Close your web browser window or tab.
 
-## Create a new indexing policy using the .NET SDK
+## Task 03: Create a new indexing policy using the .NET SDK
 
 The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.Cosmos.IndexingPolicy][docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.indexingpolicy] class to build new indexing policies in code.
 
@@ -183,7 +183,7 @@ The .NET SDK contains a suite of classes related to the parent [Microsoft.Azure.
 
 1. Close **Visual Studio Code**.
 
-## Observe an indexing policy created by the .NET SDK using the Data Explorer
+## Task 04: Observe an indexing policy created by the .NET SDK using the Data Explorer
 
 Just like with any other indexing policy, you can use the Data Explorer to view policies that you pushed using the .NET SDKs. You will now use the portal to review the policy you created in this lab from code.
 
