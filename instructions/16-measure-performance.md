@@ -8,7 +8,7 @@ lab:
 
 In this exercise, you'll measure the difference for customer entities when you model entities as separate containers versus when you model for a NoSQL database by embedding entities in a single document.
 
-## Prepare your development environment
+## Task 01: Prepare your development environment
 
 If you have not already cloned the lab code repository for **DP-420** to the environment where you're working on this lab, follow these steps to do so. Otherwise, open the previously cloned folder in **Visual Studio Code**.
 
@@ -44,11 +44,11 @@ If you have not already cloned the lab code repository for **DP-420** to the env
 
 1. Close the integrated terminal.
 
-## Measure performance of entities in separate containers
+## Task 02: Measure performance of entities in separate containers
 
 In Database-v1, data is stored in individual containers. In that database, run queries to get the customer, customer address, and customer password. Review the request charge for each of those queries.
 
-### Query for customer entity
+### Task 03: Query for customer entity
 
 In Database-v1, run a query to get the customer entity and review the request charge.
 
@@ -72,7 +72,7 @@ In Database-v1, run a query to get the customer entity and review the request ch
 
     ![Screenshot that shows the query stats for customer query in the database.](media/17-customer-query-v1.png)
 
-### Query for customer address
+### Task 04: Query for customer address
 
 Run a query to get the customer address entity and review the request charge.
 
@@ -88,7 +88,7 @@ Run a query to get the customer address entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer address query in the database.](media/17-customer-address-query-v1.png)
 
-### Query for customer password
+### Task 05: Query for customer password
 
 Run a query to get the customer password entity and review the request charge.
 
@@ -104,7 +104,7 @@ Run a query to get the customer password entity and review the request charge.
 
     ![Screenshot that shows the query stats for customer password query in the database.](media/17-customer-password-query-v1.png)
 
-### Add up the request charges
+### Task 06: Add up the request charges
 
 Now that we've run all of our queries, let's add up all of the Request Unit costs for them.
 
@@ -115,7 +115,7 @@ Now that we've run all of our queries, let's add up all of the Request Unit cost
 |Customer Password|2.83|
 |**Total RU/s**|**8.49**|
 
-## Measure performance of embedded entities
+## Task 07: Measure performance of embedded entities
 
 Now we're going to query for the same information but with the entities embedded in a single document.
 
@@ -133,7 +133,7 @@ Now we're going to query for the same information but with the entities embedded
 
 1. Select **Query Stats**. Note the request charge of 2.83, versus the 8.49 RU/s for the three queries that you ran earlier.
 
-## Compare the performance of the two models
+## Task 08 Compare the performance of the two models
 
 When you compare the RU/s for each query that you ran, you see that the last query where the customer entities are in a single document is much less expensive than the combined cost for running the three queries independently. The latency for returning this data is lower because the data is returned in a single operation.
 
